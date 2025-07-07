@@ -12,7 +12,7 @@ import empresaHero from '../assets/empresa-hero.jpg';
         <div class="slide-content">
           <h1>Bienvenidos a IMEXSE S.R.L.</h1>
           <p>Líderes en comercialización de productos mineros con más de 22 años de experiencia</p>
-          <a href="/productos" class="cta-button">Ver Productos</a>
+          <a href="/nosotros" class="cta-button">Nosotros</a>
         </div>
         <div class="slide-image">
           <Image src={empresaHero} alt="Empresa IMEXSE" width={1260} height={750} />
@@ -22,7 +22,7 @@ import empresaHero from '../assets/empresa-hero.jpg';
         <div class="slide-content">
           <h2>Cianuro de Sodio</h2>
           <p>Disponible en presentaciones de cilindros de 50 kg y cajas de 1000 kg y 1100 kg</p>
-          <a href="/productos" class="cta-button">Más Información</a>
+          <a href="/productos" class="cta-button">Productos</a>
         </div>
         <div class="slide-image">
           <Image src={cianuroUpscale} alt="Cilindros de Cianuro de Sodio 50kg" width={1408} height={1024} />
@@ -32,7 +32,7 @@ import empresaHero from '../assets/empresa-hero.jpg';
         <div class="slide-content">
           <h2>Soda Cáustica</h2>
           <p>Productos mineros de alta calidad para la industria nacional</p>
-          <a href="/contacto" class="cta-button">Contactar</a>
+          <a href="/productos" class="cta-button">Productos</a>
         </div>
         <div class="slide-image">
           <Image src={sodaCaustica} alt="Soda Cáustica" width={2048} height={2048} />
@@ -52,10 +52,17 @@ import empresaHero from '../assets/empresa-hero.jpg';
 </section>
 
 <script>
-  let slideIndex = 1;
-  let slideInterval;
+  declare global {
+    interface Window {
+      changeSlide: (n: number) => void;
+      currentSlide: (n: number) => void;
+    }
+  }
 
-  function showSlide(n) {
+  let slideIndex: number = 1;
+  let slideInterval: number | undefined;
+
+  function showSlide(n: number): void {
     const slides = document.querySelectorAll('.carousel-slide');
     const indicators = document.querySelectorAll('.indicator');
     
@@ -69,27 +76,29 @@ import empresaHero from '../assets/empresa-hero.jpg';
     indicators[slideIndex - 1].classList.add('active');
   }
 
-  function changeSlide(n) {
+  function changeSlide(n: number): void {
     showSlide(slideIndex += n);
     resetAutoSlide();
   }
 
-  function currentSlide(n) {
+  function currentSlide(n: number): void {
     showSlide(slideIndex = n);
     resetAutoSlide();
   }
 
-  function nextSlide() {
+  function nextSlide(): void {
     showSlide(slideIndex += 1);
   }
 
-  function resetAutoSlide() {
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, 5000);
+  function resetAutoSlide(): void {
+    if (slideInterval) {
+      clearInterval(slideInterval);
+    }
+    slideInterval = setInterval(nextSlide, 5000) as unknown as number;
   }
 
   // Auto-advance slides
-  slideInterval = setInterval(nextSlide, 5000);
+  slideInterval = setInterval(nextSlide, 5000) as unknown as number;
 
   // Make functions globally available
   window.changeSlide = changeSlide;

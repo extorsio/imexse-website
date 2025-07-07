@@ -15,7 +15,7 @@ import sodaCaustica from '../assets/soda caustica.png';
       <div class="slider-track">
         <div class="product-card">
           <div class="product-image">
-            <Image src={cianuroUpscale} width={380} height={280} alt="Cianuro de Sodio Cilindros 50kg" />
+            <Image src={cianuroUpscale} width={450} height={320} alt="Cianuro de Sodio Cilindros 50kg" />
             <div class="product-badge">Premium</div>
           </div>
           <div class="product-content">
@@ -30,7 +30,7 @@ import sodaCaustica from '../assets/soda caustica.png';
         
         <div class="product-card">
           <div class="product-image">
-            <Image src={cajasUpscale} width={380} height={280} alt="Cianuro de Sodio Cajas 1000kg" />
+            <Image src={cajasUpscale} width={450} height={320} alt="Cianuro de Sodio Cajas 1000kg" />
             <div class="product-badge">Industrial</div>
           </div>
           <div class="product-content">
@@ -45,7 +45,7 @@ import sodaCaustica from '../assets/soda caustica.png';
         
         <div class="product-card">
           <div class="product-image">
-            <Image src={cajasUpscale} width={380} height={280} alt="Cianuro de Sodio Cajas 1100kg" />
+            <Image src={cajasUpscale} width={450} height={320} alt="Cianuro de Sodio Cajas 1100kg" />
             <div class="product-badge">Máximo</div>
           </div>
           <div class="product-content">
@@ -60,7 +60,7 @@ import sodaCaustica from '../assets/soda caustica.png';
         
         <div class="product-card">
           <div class="product-image">
-            <Image src={sodaCaustica} width={380} height={280} alt="Soda Cáustica" />
+            <Image src={sodaCaustica} width={450} height={320} alt="Soda Cáustica" />
             <div class="product-badge">Especial</div>
           </div>
           <div class="product-content">
@@ -76,7 +76,7 @@ import sodaCaustica from '../assets/soda caustica.png';
         <!-- Duplicated for infinite scroll effect -->
         <div class="product-card">
           <div class="product-image">
-            <Image src={cianuroUpscale} width={380} height={280} alt="Cianuro de Sodio Cilindros 50kg" />
+            <Image src={cianuroUpscale} width={450} height={320} alt="Cianuro de Sodio Cilindros 50kg" />
             <div class="product-badge">Premium</div>
           </div>
           <div class="product-content">
@@ -91,7 +91,7 @@ import sodaCaustica from '../assets/soda caustica.png';
         
         <div class="product-card">
           <div class="product-image">
-            <Image src={cajasUpscale} width={380} height={280} alt="Cianuro de Sodio Cajas 1000kg" />
+            <Image src={cajasUpscale} width={450} height={320} alt="Cianuro de Sodio Cajas 1000kg" />
             <div class="product-badge">Industrial</div>
           </div>
           <div class="product-content">
@@ -104,19 +104,6 @@ import sodaCaustica from '../assets/soda caustica.png';
           </div>
         </div>
       </div>
-    </div>
-    
-    <div class="slider-controls">
-      <button class="slider-btn prev-btn" onclick="moveSlider(-1)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="15,18 9,12 15,6"></polyline>
-        </svg>
-      </button>
-      <button class="slider-btn next-btn" onclick="moveSlider(1)">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <polyline points="9,18 15,12 9,6"></polyline>
-        </svg>
-      </button>
     </div>
   </div>
 </section>
@@ -143,6 +130,9 @@ import sodaCaustica from '../assets/soda caustica.png';
   .container {
     position: relative;
     z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
   }
 
   .section-header {
@@ -175,27 +165,24 @@ import sodaCaustica from '../assets/soda caustica.png';
     overflow: hidden;
     border-radius: 1.5rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    margin: 0 1rem;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .slider-container:active {
+    cursor: grabbing;
   }
 
   .slider-track {
     display: flex;
     transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
-    gap: 2rem;
+    gap: 2.5rem;
     padding: 2rem 0;
-    animation: autoSlide 20s infinite linear;
-  }
-
-  @keyframes autoSlide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-
-  .slider-track:hover {
-    animation-play-state: paused;
   }
 
   .product-card {
-    min-width: 380px;
+    min-width: 450px;
     background: linear-gradient(145deg, #ffffff, #f8fafc);
     border-radius: 1.5rem;
     overflow: hidden;
@@ -216,7 +203,7 @@ import sodaCaustica from '../assets/soda caustica.png';
 
   .product-image {
     position: relative;
-    height: 280px;
+    height: 320px;
     overflow: hidden;
     background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
   }
@@ -281,41 +268,6 @@ import sodaCaustica from '../assets/soda caustica.png';
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
-  .slider-controls {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 3rem;
-  }
-
-  .slider-btn {
-    background: linear-gradient(135deg, #ffffff, #f8fafc);
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    color: #1e293b;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-  }
-
-  .slider-btn:hover {
-    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
-    transform: translateY(-2px) scale(1.05);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-
-  .slider-btn:active {
-    transform: translateY(0) scale(0.98);
-    transition: all 0.1s ease;
-  }
-
   @media (max-width: 768px) {
     .products-slider {
       padding: 0 0 1.5rem 0;
@@ -330,7 +282,7 @@ import sodaCaustica from '../assets/soda caustica.png';
     }
 
     .product-card {
-      min-width: 300px;
+      min-width: 350px;
     }
 
     .product-content {
@@ -340,88 +292,100 @@ import sodaCaustica from '../assets/soda caustica.png';
     .product-content h3 {
       font-size: 1.25rem;
     }
-
-    .slider-controls {
-      margin-top: 2rem;
-    }
-
-    .slider-btn {
-      width: 50px;
-      height: 50px;
-    }
   }
 </style>
 
 <script>
-  let currentSlide = 0;
-  const totalSlides = 4; // Number of unique products
-  let isTransitioning = false;
-
-  function moveSlider(direction: number) {
-    if (isTransitioning) return;
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.querySelector('.slider-container') as HTMLElement;
     const track = document.querySelector('.slider-track') as HTMLElement;
-    const card = document.querySelector('.product-card') as HTMLElement;
-    if (!track || !card) return;
+    
+    if (!slider || !track) return;
 
-    isTransitioning = true;
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+    let prevTranslate = 0;
+    let animationFrameId: number;
 
-    const style = window.getComputedStyle(track);
-    const gap = parseFloat(style.gap) || 32; // Fallback to 32px
-    const cardWidth = card.offsetWidth;
-    const moveDistance = cardWidth + gap;
+    // --- Event Listeners ---
+    slider.addEventListener('contextmenu', (e) => e.preventDefault());
+    slider.addEventListener('mousedown', dragStart);
+    slider.addEventListener('mouseup', dragEnd);
+    slider.addEventListener('mouseleave', dragEnd);
+    slider.addEventListener('mousemove', dragMove);
+    slider.addEventListener('touchstart', dragStart, { passive: true });
+    slider.addEventListener('touchend', dragEnd);
+    slider.addEventListener('touchmove', dragMove);
 
-    currentSlide += direction;
-
-    if (currentSlide >= totalSlides) {
-      currentSlide = 0;
-    } else if (currentSlide < 0) {
-      currentSlide = totalSlides - 1;
+    function getPositionX(e: Event): number {
+      return e.type.includes('mouse') 
+        ? (e as MouseEvent).clientX 
+        : (e as TouchEvent).touches[0].clientX;
     }
 
-    const translateX = -currentSlide * moveDistance;
-    track.style.transform = `translateX(${translateX}px)`;
-    track.style.animationPlayState = 'paused';
-
-    setTimeout(() => {
-      isTransitioning = false;
-    }, 250); // Match transition duration
-
-    setTimeout(() => {
-      track.style.animationPlayState = 'running';
-    }, 1500);
-  }
-
-  // Make function globally available
-  (window as any).moveSlider = moveSlider;
-
-  // Touch/swipe support for mobile
-  let startX = 0;
-  let currentX = 0;
-  let isDragging = false;
-
-  const slider = document.querySelector('.slider-container');
-  if (slider) {
-    slider.addEventListener('touchstart', (e: Event) => {
-      const touchEvent = e as TouchEvent;
-      startX = touchEvent.touches[0].clientX;
+    function dragStart(e: Event) {
       isDragging = true;
-    });
+      startPos = getPositionX(e);
+      
+      cancelAnimationFrame(animationFrameId);
 
-    slider.addEventListener('touchmove', (e: Event) => {
+      const transformMatrix = window.getComputedStyle(track).getPropertyValue('transform');
+      if (transformMatrix !== 'none') {
+        // Extrae el valor de translateX (el quinto valor en la matriz 2D)
+        currentTranslate = Number(transformMatrix.split(',')[4].trim());
+      }
+      prevTranslate = currentTranslate;
+
+      track.style.transition = 'none';
+      slider.style.cursor = 'grabbing';
+    }
+
+    function dragMove(e: Event) {
       if (!isDragging) return;
-      const touchEvent = e as TouchEvent;
-      currentX = touchEvent.touches[0].clientX;
-    });
+      e.preventDefault();
+      const currentPosition = getPositionX(e);
+      currentTranslate = prevTranslate + currentPosition - startPos;
+      track.style.transform = `translateX(${currentTranslate}px)`;
+    }
 
-    slider.addEventListener('touchend', () => {
+    function dragEnd() {
       if (!isDragging) return;
       isDragging = false;
+      slider.style.cursor = 'grab';
+      prevTranslate = currentTranslate;
       
-      const deltaX = startX - currentX;
-      if (Math.abs(deltaX) > 50) {
-        moveSlider(deltaX > 0 ? 1 : -1);
+      // Reinicia la animación de autodesplazamiento después de un breve retraso
+      setTimeout(() => {
+        autoScroll();
+      }, 500);
+    }
+
+    function autoScroll() {
+      if (!isDragging) {
+        currentTranslate -= 0.5; // Ajusta la velocidad de desplazamiento aquí
+        
+        const uniqueItemsWidth = track.scrollWidth / 2;
+        // Si el carrusel se ha desplazado más allá de la mitad de su ancho (la parte duplicada)
+        if (Math.abs(currentTranslate) >= uniqueItemsWidth) {
+          // Lo reseteamos al principio para crear el bucle infinito
+          currentTranslate = 0;
+        }
+        
+        track.style.transition = 'none'; // El autodesplazamiento debe ser lineal y suave
+        track.style.transform = `translateX(${currentTranslate}px)`;
+        prevTranslate = currentTranslate;
       }
+      animationFrameId = requestAnimationFrame(autoScroll);
+    }
+
+    // Evita que las imágenes sean arrastradas por defecto por el navegador
+    const images = slider.querySelectorAll('img');
+    images.forEach(img => {
+      img.addEventListener('dragstart', (e) => e.preventDefault());
     });
-  }
+
+    // Inicia la animación
+    autoScroll();
+  });
 </script>
