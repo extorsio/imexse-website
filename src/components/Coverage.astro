@@ -7,45 +7,175 @@
       <div class="coverage-text">
         <h2>Cobertura a Nivel Nacional</h2>
         <p>Brindamos servicios de comercialización de productos mineros en todo el territorio peruano, garantizando la entrega segura y oportuna de nuestros productos a todas las regiones del país.</p>
+        
         <div class="coverage-stats">
           <div class="stat">
-            <h3>24</h3>
-            <p>Regiones</p>
+            <div class="stat-icon">🌎</div>
+            <div class="stat-number">24</div>
+            <div class="stat-label">Regiones</div>
           </div>
           <div class="stat">
-            <h3>195</h3>
-            <p>Provincias</p>
+            <div class="stat-icon">🏙️</div>
+            <div class="stat-number">195</div>
+            <div class="stat-label">Provincias</div>
           </div>
           <div class="stat">
-            <h3>22+</h3>
-            <p>Años de experiencia</p>
+            <div class="stat-icon">🛠️</div>
+            <div class="stat-number">22+</div>
+            <div class="stat-label">Años de experiencia</div>
           </div>
         </div>
       </div>
+      
       <div class="coverage-map">
-        <div class="peru-map">
-          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
-            <path d="M200 50 L350 150 L320 300 L250 450 L150 450 L80 300 L50 150 Z" fill="#1e40af" stroke="#0891b2" stroke-width="3"/>
-            <circle cx="200" cy="250" r="5" fill="#fbbf24"/>
-            <text x="210" y="255" font-family="Arial" font-size="12" fill="#fbbf24">Lima</text>
-            <circle cx="280" cy="200" r="3" fill="#fbbf24"/>
-            <text x="290" y="205" font-family="Arial" font-size="10" fill="#fbbf24">Huancayo</text>
-            <circle cx="150" cy="180" r="3" fill="#fbbf24"/>
-            <text x="120" y="175" font-family="Arial" font-size="10" fill="#fbbf24">Trujillo</text>
-            <circle cx="120" cy="300" r="3" fill="#fbbf24"/>
-            <text x="80" y="295" font-family="Arial" font-size="10" fill="#fbbf24">Arequipa</text>
-            <circle cx="250" cy="350" r="3" fill="#fbbf24"/>
-            <text x="260" y="355" font-family="Arial" font-size="10" fill="#fbbf24">Cusco</text>
-          </svg>
-        </div>
-        <div class="map-legend">
-          <div class="legend-item">
-            <div class="legend-color"></div>
-            <span>Cobertura Nacional</span>
+        <div class="map-container">
+          <div class="peru-map">
+            <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Gradientes para diferentes regiones -->
+                <linearGradient id="coastGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#e0f2fe"/>
+                  <stop offset="100%" style="stop-color:#0369a1"/>
+                </linearGradient>
+                <linearGradient id="sierraGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#fef3c7"/>
+                  <stop offset="100%" style="stop-color:#f59e0b"/>
+                </linearGradient>
+                <linearGradient id="selvaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" style="stop-color:#dcfce7"/>
+                  <stop offset="100%" style="stop-color:#16a34a"/>
+                </linearGradient>
+                
+                <!-- Sombras -->
+                <filter id="regionShadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+                </filter>
+                
+                <!-- Patrón para océano -->
+                <pattern id="oceanPattern" patternUnits="userSpaceOnUse" width="4" height="4">
+                  <rect width="4" height="4" fill="#e0f2fe"/>
+                  <circle cx="2" cy="2" r="0.5" fill="#0891b2" opacity="0.3"/>
+                </pattern>
+              </defs>
+              
+              <!-- Fondo del océano -->
+              <rect x="0" y="0" width="150" height="600" fill="url(#oceanPattern)" opacity="0.3"/>
+              
+              <!-- COSTA NORTE -->
+              <path d="M150 80 L200 70 L250 75 L280 85 L300 100 L280 130 L250 120 L200 115 L170 120 Z" 
+                    fill="url(#coastGradient)" stroke="#0891b2" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- SIERRA NORTE -->
+              <path d="M200 115 L250 120 L280 130 L320 140 L340 160 L320 180 L280 170 L240 165 L200 160 Z" 
+                    fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- SELVA NORTE -->
+              <path d="M320 140 L380 130 L420 150 L430 180 L410 200 L370 190 L340 185 L320 180 Z" 
+                    fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- LIMA METROPOLITANA -->
+              <path d="M170 200 L220 195 L250 200 L240 230 L200 235 L160 225 Z" 
+                    fill="#fbbf24" stroke="#ea580c" stroke-width="2" filter="url(#regionShadow)"/>
+              
+              <!-- COSTA CENTRO -->
+              <path d="M160 225 L200 235 L240 230 L250 250 L220 270 L180 265 L150 250 Z" 
+                    fill="url(#coastGradient)" stroke="#0891b2" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- SIERRA CENTRO -->
+              <path d="M240 230 L280 235 L320 245 L350 260 L340 290 L300 285 L260 280 L240 270 Z" 
+                    fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- SELVA CENTRO -->
+              <path d="M350 260 L400 250 L440 270 L450 300 L430 320 L390 315 L360 310 L340 290 Z" 
+                    fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- COSTA SUR -->
+              <path d="M150 350 L200 345 L240 350 L250 380 L220 400 L180 395 L140 380 Z" 
+                    fill="url(#coastGradient)" stroke="#0891b2" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- SIERRA SUR -->
+              <path d="M240 350 L290 355 L330 365 L360 380 L350 410 L310 405 L270 400 L240 390 Z" 
+                    fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- SELVA SUR -->
+              <path d="M360 380 L410 370 L450 390 L460 420 L440 440 L400 435 L370 430 L350 410 Z" 
+                    fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              
+              <!-- Rutas principales animadas -->
+              <path d="M210 215 L280 170" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
+              <path d="M210 215 L170 160" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
+              <path d="M210 215 L180 350" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
+              <path d="M210 215 L300 380" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
+              <path d="M210 215 L380 290" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
+              
+              <!-- CIUDADES PRINCIPALES -->
+              
+              <!-- Lima (Capital) - Más grande y destacada -->
+              <circle cx="210" cy="215" r="12" fill="#ea580c" stroke="#fff" stroke-width="3"/>
+              <circle cx="210" cy="215" r="6" fill="#fff" opacity="0.8"/>
+              <text x="230" y="220" font-family="Inter" font-size="16" font-weight="700" fill="#1e293b">LIMA</text>
+              
+              <!-- Ciudades importantes -->
+              <circle cx="280" cy="170" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
+              <text x="295" y="175" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Huancayo</text>
+              
+              <circle cx="170" cy="160" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
+              <text x="110" y="155" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Trujillo</text>
+              
+              <circle cx="180" cy="350" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
+              <text x="120" y="345" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Arequipa</text>
+              
+              <circle cx="300" cy="380" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
+              <text x="315" y="385" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Cusco</text>
+              
+              <circle cx="190" cy="120" r="6" fill="#16a34a" stroke="#fff" stroke-width="2"/>
+              <text x="130" y="115" font-family="Inter" font-size="11" font-weight="500" fill="#1e293b">Chiclayo</text>
+              
+              <circle cx="380" cy="290" r="6" fill="#16a34a" stroke="#fff" stroke-width="2"/>
+              <text x="395" y="295" font-family="Inter" font-size="11" font-weight="500" fill="#1e293b">Iquitos</text>
+              
+              <circle cx="320" cy="320" r="5" fill="#f59e0b" stroke="#fff" stroke-width="1"/>
+              <text x="335" y="325" font-family="Inter" font-size="10" font-weight="500" fill="#1e293b">Ayacucho</text>
+              
+              <!-- Elementos decorativos -->
+              <text x="50" y="50" font-family="Inter" font-size="24" font-weight="800" fill="#0369a1" opacity="0.3">PERÚ</text>
+              <text x="350" y="550" font-family="Inter" font-size="12" font-weight="500" fill="#64748b" opacity="0.6">Cobertura Nacional</text>
+              
+              <!-- Indicador de escala -->
+              <g transform="translate(380, 500)">
+                <line x1="0" y1="0" x2="50" y2="0" stroke="#64748b" stroke-width="2"/>
+                <line x1="0" y1="-3" x2="0" y2="3" stroke="#64748b" stroke-width="2"/>
+                <line x1="50" y1="-3" x2="50" y2="3" stroke="#64748b" stroke-width="2"/>
+                <text x="25" y="15" font-family="Inter" font-size="9" text-anchor="middle" fill="#64748b">500 km</text>
+              </g>
+            </svg>
           </div>
-          <div class="legend-item">
-            <div class="legend-point"></div>
-            <span>Principales Ciudades</span>
+          
+          <div class="map-legend">
+            <div class="legend-item">
+              <div class="legend-region costa"></div>
+              <span>Región Costa</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-region sierra"></div>
+              <span>Región Sierra</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-region selva"></div>
+              <span>Región Selva</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-point capital"></div>
+              <span>Capital</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-point city"></div>
+              <span>Ciudades Principales</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-route"></div>
+              <span>Red de Distribución</span>
+            </div>
           </div>
         </div>
       </div>
@@ -55,118 +185,380 @@
 
 <style>
   .coverage {
-    padding: 4rem 0;
-    background: white;
+    padding: 5rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .coverage::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ea580c, #0369a1, #ea580c);
   }
 
   .coverage-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 5rem;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .coverage-text {
+    position: relative;
+  }
+
+  .coverage-text::after {
+    content: '';
+    position: absolute;
+    right: -2.5rem;
+    top: 20%;
+    width: 2px;
+    height: 60%;
+    background: linear-gradient(to bottom, transparent, #0369a1, transparent);
   }
 
   .coverage-text h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #1e40af;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    color: #1e293b;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #1e293b 0%, #0369a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .coverage-text p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: #4b5563;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    color: #475569;
+    font-weight: 400;
   }
 
   .coverage-stats {
     display: flex;
-    gap: 2rem;
+    gap: 3rem;
+    margin-top: 2rem;
   }
 
   .stat {
     text-align: center;
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
   }
 
-  .stat h3 {
-    font-size: 2rem;
-    font-weight: 700;
+  .stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ea580c, #0369a1);
+  }
+
+  .stat:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 800;
     color: #ea580c;
     margin-bottom: 0.5rem;
+    line-height: 1;
+    text-shadow: 0 2px 4px rgba(234, 88, 12, 0.2);
   }
 
-  .stat p {
-    font-size: 0.9rem;
-    color: #6b7280;
-    margin: 0;
+  .stat-label {
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .coverage-map {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .map-container {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e2e8f0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .map-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ea580c, #0369a1, #ea580c);
   }
 
   .peru-map {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
   }
 
   .peru-map svg {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     height: auto;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s ease;
+  }
+
+  .peru-map:hover svg {
+    transform: scale(1.02);
   }
 
   .map-legend {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e2e8f0;
   }
 
   .legend-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     font-size: 0.9rem;
-    color: #6b7280;
+    color: #475569;
+    font-weight: 500;
+  }
+
+  .legend-region {
+    width: 20px;
+    height: 14px;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .legend-region.costa {
+    background: linear-gradient(135deg, #e0f2fe, #0369a1);
+  }
+
+  .legend-region.sierra {
+    background: linear-gradient(135deg, #fef3c7, #f59e0b);
+  }
+
+  .legend-region.selva {
+    background: linear-gradient(135deg, #dcfce7, #16a34a);
   }
 
   .legend-color {
-    width: 20px;
-    height: 15px;
-    background: #1e40af;
-    border-radius: 2px;
+    width: 24px;
+    height: 16px;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
 
-  .legend-point {
-    width: 10px;
-    height: 10px;
-    background: #fbbf24;
+  .legend-point.capital {
+    width: 14px;
+    height: 14px;
+    background: #ea580c;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.4);
+  }
+
+  .legend-point.city {
+    width: 12px;
+    height: 12px;
+    background: #0369a1;
+    border-radius: 50%;
+    border: 1px solid white;
+    box-shadow: 0 2px 4px rgba(3, 105, 161, 0.4);
+  }
+
+  .legend-route {
+    width: 24px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ea580c, transparent);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .legend-route::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: #ea580c;
     border-radius: 50%;
   }
 
+  /* Animaciones para las rutas */
+  .route-animation {
+    stroke-dashoffset: 20;
+    animation: routeFlow 4s linear infinite;
+  }
+
+  @keyframes routeFlow {
+    0% { 
+      stroke-dashoffset: 20; 
+      opacity: 0.4;
+    }
+    50% { 
+      opacity: 0.8;
+    }
+    100% { 
+      stroke-dashoffset: 0; 
+      opacity: 0.4;
+    }
+  }
+
+  /* Animación para las regiones */
+  .peru-map svg path:not([stroke-dasharray]) {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .peru-map svg path:not([stroke-dasharray]):hover {
+    opacity: 1 !important;
+    transform: scale(1.02);
+    filter: brightness(1.1);
+  }
+
+  /* Efectos de hover para ciudades */
+  .peru-map svg circle {
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .peru-map svg circle:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2) drop-shadow(0 0 8px currentColor);
+  }
+
+  @media (max-width: 1024px) {
+    .coverage-content {
+      gap: 3rem;
+    }
+
+    .coverage-text::after {
+      display: none;
+    }
+
+    .coverage-stats {
+      gap: 2rem;
+    }
+
+    .stat {
+      padding: 1.5rem 1rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
+    .coverage {
+      padding: 3rem 0;
+    }
+
     .coverage-content {
       grid-template-columns: 1fr;
-      gap: 2rem;
+      gap: 3rem;
+      padding: 0 1rem;
+    }
+
+    .coverage-text h2 {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .coverage-text p {
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    .coverage-stats {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .stat {
+      min-width: 140px;
+      padding: 1.5rem 1rem;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+    }
+
+    .map-container {
+      padding: 2rem 1.5rem;
+    }
+
+    .map-legend {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      text-align: center;
+    }
+
+    .legend-item {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .coverage-stats {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat {
+      width: 100%;
+      max-width: 200px;
     }
 
     .coverage-text h2 {
       font-size: 2rem;
     }
 
-    .coverage-stats {
-      justify-content: space-around;
-    }
-
-    .stat h3 {
-      font-size: 1.5rem;
-    }
-
-    .map-legend {
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
+    .map-container {
+      padding: 1.5rem 1rem;
     }
   }
 </style>

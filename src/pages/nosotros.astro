@@ -56,23 +56,11 @@ import productos from '../assets/productos.jpg';
               <h2>22+ Años de Experiencia</h2>
               <p>Desde nuestros inicios, IMEXSE S.R.L. ha sido sinónimo de calidad y confianza en el mercado de productos mineros. Nuestra larga trayectoria nos ha permitido desarrollar relaciones sólidas con proveedores internacionales y clientes nacionales.</p>
               <div class="experience-highlights">
-                <div class="highlight">
-                  <h4>Experiencia Comprobada</h4>
-                  <p>Más de dos décadas en el mercado minero peruano</p>
-                </div>
-                <div class="highlight">
-                  <h4>Calidad Garantizada</h4>
-                  <p>Productos con certificaciones internacionales</p>
-                </div>
-                <div class="highlight">
-                  <h4>Servicio Integral</h4>
-                  <p>Desde la importación hasta la entrega final</p>
-                </div>
               </div>
             </div>
             <div class="experience-images">
-              <Image src={laboratorio} alt="Laboratorio" width={600} height={400} />
-              <Image src={productos} alt="Productos" width={600} height={400} />
+              <Image src={laboratorio} alt="Laboratorio" width={400} height={300} />
+              <Image src={productos} alt="Productos" width={400} height={300} />
             </div>
           </div>
         </div>
@@ -83,8 +71,8 @@ import productos from '../assets/productos.jpg';
             <div class="quality-card">
               <div class="quality-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 15L9 12L12 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <h4>Productos de Alta Pureza</h4>
@@ -97,8 +85,8 @@ import productos from '../assets/productos.jpg';
                   <polyline points="9,12 12,15 16,11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <h4>Confianza y Seguridad</h4>
-              <p>Mantenemos los más altos estándares de seguridad en el manejo, almacenamiento y transporte de productos mineros, protegiendo a nuestros clientes y al medio ambiente.</p>
+              <h4>Logística Confiable</h4>
+              <p>Contamos con una cadena de suministro robusta que asegura la disponibilidad y entrega oportuna de nuestros productos en todo el país.</p>
             </div>
             <div class="quality-card">
               <div class="quality-icon">
@@ -112,10 +100,8 @@ import productos from '../assets/productos.jpg';
             <div class="quality-card">
               <div class="quality-icon">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M23 21V19C23 18.1645 22.7155 17.3541 22.2094 16.7007C21.7033 16.0473 20.9999 15.5885 20.2 15.3949" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M16 3.13C16.8003 3.32332 17.5037 3.78204 18.0098 4.43536C18.5159 5.08868 18.8003 5.89925 18.8003 6.735C18.8003 7.57075 18.5159 8.38132 18.0098 9.03464C17.5037 9.68796 16.8003 10.1467 16 10.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 12L15 9L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
               <h4>Atención Personalizada</h4>
@@ -193,12 +179,14 @@ import productos from '../assets/productos.jpg';
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
-
-  .hero-image img {
+  .hero-image img, .hero-image astro-island, .hero-image picture {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
+    display: block;
   }
 
   .hero-overlay {
@@ -207,23 +195,34 @@ import productos from '../assets/productos.jpg';
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(30, 64, 175, 0.8) 0%, rgba(8, 145, 178, 0.8) 100%);
+    background: linear-gradient(120deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: white;
+    color: #ffffff;
+    backdrop-filter: blur(2px) saturate(120%);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+    border-radius: 18px;
+    border: 1.5px solid rgba(255,255,255,0.08);
+    transition: background 0.5s, backdrop-filter 0.5s;
   }
 
   .hero-overlay h1 {
     font-size: 3rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 1rem;
+    letter-spacing: -1px;
+    color: #ffffff;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.5);
   }
 
   .hero-overlay p {
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.25rem;
+    opacity: 0.95;
+    font-weight: 500;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
   }
 
   .company-info {

@@ -1,41 +1,33 @@
 ---
 import { Image } from 'astro:assets';
 import cianuroUpscale from '../assets/cinauro_upscale.png';
-import sodaCaustica from '../assets/soda caustica.png';
+import productos from '../assets/productos.jpg';
+import sodaCaustica from '../assets/soda-caustica.png';
 import empresaHero from '../assets/empresa-hero.jpg';
 ---
 
 <section class="hero">
   <div class="carousel">
     <div class="carousel-container">
-      <div class="carousel-slide active">
+      <div class="carousel-slide active" data-bg={empresaHero.src}>
         <div class="slide-content">
           <h1>Bienvenidos a IMEXSE S.R.L.</h1>
           <p>Líderes en comercialización de productos mineros con más de 22 años de experiencia</p>
           <a href="/nosotros" class="cta-button">Nosotros</a>
         </div>
-        <div class="slide-image">
-          <Image src={empresaHero} alt="Empresa IMEXSE" width={1260} height={750} />
-        </div>
       </div>
-      <div class="carousel-slide">
+      <div class="carousel-slide" data-bg={cianuroUpscale.src}>
         <div class="slide-content">
           <h2>Cianuro de Sodio</h2>
           <p>Disponible en presentaciones de cilindros de 50 kg y cajas de 1000 kg y 1100 kg</p>
           <a href="/productos" class="cta-button">Productos</a>
         </div>
-        <div class="slide-image">
-          <Image src={cianuroUpscale} alt="Cilindros de Cianuro de Sodio 50kg" width={1408} height={1024} />
-        </div>
       </div>
-      <div class="carousel-slide">
+  <div class="carousel-slide" data-bg={sodaCaustica.src}>
         <div class="slide-content">
           <h2>Soda Cáustica</h2>
           <p>Productos mineros de alta calidad para la industria nacional</p>
           <a href="/productos" class="cta-button">Productos</a>
-        </div>
-        <div class="slide-image">
-          <Image src={sodaCaustica} alt="Soda Cáustica" width={2048} height={2048} />
         </div>
       </div>
     </div>
@@ -63,13 +55,20 @@ import empresaHero from '../assets/empresa-hero.jpg';
   let slideInterval: number | undefined;
 
   function showSlide(n: number): void {
-    const slides = document.querySelectorAll('.carousel-slide');
+    const slides = document.querySelectorAll('.carousel-slide') as NodeListOf<HTMLElement>;
     const indicators = document.querySelectorAll('.indicator');
     
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     
-    slides.forEach(slide => slide.classList.remove('active'));
+    slides.forEach((slide, index) => {
+      slide.classList.remove('active');
+      const bgUrl = slide.getAttribute('data-bg');
+      if (bgUrl) {
+        slide.style.backgroundImage = `url(${bgUrl})`;
+      }
+    });
+    
     indicators.forEach(indicator => indicator.classList.remove('active'));
     
     slides[slideIndex - 1].classList.add('active');
@@ -103,6 +102,11 @@ import empresaHero from '../assets/empresa-hero.jpg';
   // Make functions globally available
   window.changeSlide = changeSlide;
   window.currentSlide = currentSlide;
+
+  document.addEventListener('DOMContentLoaded', () => {
+    showSlide(slideIndex);
+    resetAutoSlide();
+  });
 </script>
 
 <style>
@@ -110,8 +114,8 @@ import empresaHero from '../assets/empresa-hero.jpg';
     margin-top: 80px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
-    padding-bottom: 2rem;
+    background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-blue) 50%, var(--color-blue-light) 100%);
+    padding: 3rem 0;
   }
 
   .hero::before {
@@ -122,9 +126,8 @@ import empresaHero from '../assets/empresa-hero.jpg';
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 25%),
-      radial-gradient(circle at 75% 75%, rgba(239, 68, 68, 0.1) 0%, transparent 25%),
-      radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 25%);
+      radial-gradient(circle at 25% 25%, rgba(3, 105, 161, 0.1) 0%, transparent 30%),
+      radial-gradient(circle at 75% 75%, rgba(234, 88, 12, 0.08) 0%, transparent 30%);
     animation: gradientShift 20s ease-in-out infinite;
   }
 
@@ -143,13 +146,14 @@ import empresaHero from '../assets/empresa-hero.jpg';
     position: relative;
     width: 100%;
     height: 100%;
-    border-radius: 2rem;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 
-      0 25px 50px -12px rgba(0, 0, 0, 0.4),
-      0 0 0 1px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    margin: 2rem;
+      0 20px 25px -5px rgba(0, 0, 0, 0.1),
+      0 25px 50px -12px rgba(0, 0, 0, 0.15);
+    margin: 0;
+    background: var(--color-white);
+    border: 1px solid rgba(203, 213, 225, 0.3);
   }
 
   .carousel-slide {
@@ -160,76 +164,108 @@ import empresaHero from '../assets/empresa-hero.jpg';
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: scale(0.95) translateX(50px);
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+    transform: scale(0.95);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: local;
+  }
+
+  /* Todas las slides ocupan todo el fondo y centran la imagen */
+  .carousel-slide {
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-color: #222;
   }
 
   .carousel-slide.active {
     opacity: 1;
-    transform: scale(1) translateX(0);
+    transform: scale(1);
   }
 
-  .slide-content {
-    flex: 1;
-    padding: 4rem;
-    z-index: 2;
-    position: relative;
-  }
-
-  .slide-content::before {
+  .carousel-slide::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
-    border-radius: 1rem;
-    z-index: -1;
+    /* Menos opacidad para ver más la imagen */
+    background: linear-gradient(135deg, 
+      rgba(30, 41, 59, 0.55) 0%, 
+      rgba(30, 41, 59, 0.35) 40%, 
+      rgba(3, 105, 161, 0.18) 70%, 
+      rgba(0, 0, 0, 0.08) 100%);
+    z-index: 1;
+  }
+
+  .carousel-slide:nth-child(2)::before,
+  .carousel-slide:nth-child(3)::before {
+    background: linear-gradient(135deg, 
+      rgba(30, 41, 59, 0.6) 0%, 
+      rgba(30, 41, 59, 0.4) 30%, 
+      rgba(3, 105, 161, 0.22) 60%, 
+      rgba(0, 0, 0, 0.12) 100%);
+  }
+
+  .slide-content {
+    flex: 0 0 auto;
+    max-width: 600px;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    margin-left: 2rem;
   }
 
   .slide-content h1,
   .slide-content h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: var(--color-white);
     line-height: 1.2;
+    letter-spacing: -0.5px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   }
 
   .slide-content p {
-    font-size: 1.4rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.3rem;
     margin-bottom: 2.5rem;
-    color: #cbd5e1;
-    line-height: 1.6;
-    font-weight: 300;
-    opacity: 0.9;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.7;
+    font-weight: 400;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   }
 
   .cta-button {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: linear-gradient(135deg, #ea580c 0%, #dc2626 50%, #b91c1c 100%);
-    color: white;
+    justify-content: center;
+    gap: 0.75rem;
+    background: var(--color-orange);
+    color: var(--color-white);
     padding: 1.25rem 2.5rem;
-    border-radius: 3rem;
-    font-weight: 700;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
     font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 
-      0 10px 25px -5px rgba(234, 88, 12, 0.4),
-      0 0 0 1px rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 16px rgba(234, 88, 12, 0.4);
+    text-decoration: none;
     position: relative;
     overflow: hidden;
+    align-self: flex-start;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .cta-button::before {
@@ -239,7 +275,7 @@ import empresaHero from '../assets/empresa-hero.jpg';
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     transition: left 0.6s;
   }
 
@@ -248,41 +284,9 @@ import empresaHero from '../assets/empresa-hero.jpg';
   }
 
   .cta-button:hover {
+    background: #dc2626;
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 
-      0 20px 40px -5px rgba(234, 88, 12, 0.6),
-      0 0 0 1px rgba(255, 255, 255, 0.2);
-  }
-
-  .slide-image {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    height: 100%;
-    border-radius: 0 2rem 2rem 0;
-  }
-
-  .slide-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
-    z-index: 1;
-  }
-
-  .slide-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.8s ease;
-    filter: brightness(1.1) contrast(1.1) saturate(1.2);
-  }
-
-  .carousel-slide.active .slide-image img {
-    transform: scale(1.05);
+    box-shadow: 0 15px 30px rgba(234, 88, 12, 0.6);
   }
 
   .carousel-controls {
@@ -299,28 +303,27 @@ import empresaHero from '../assets/empresa-hero.jpg';
   }
 
   .carousel-btn {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
-    backdrop-filter: blur(10px);
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: var(--color-white);
+    color: var(--color-navy);
+    border: 1px solid rgba(203, 213, 225, 0.3);
     width: 60px;
     height: 60px;
     border-radius: 50%;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.3s ease;
     pointer-events: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   }
 
   .carousel-btn:hover {
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(147, 51, 234, 0.9) 100%);
-    transform: scale(1.1) translateY(-2px);
-    box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.4);
-    border-color: rgba(255, 255, 255, 0.3);
+    background: var(--color-orange);
+    color: var(--color-white);
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(234, 88, 12, 0.3);
   }
 
   .carousel-indicators {
@@ -337,29 +340,28 @@ import empresaHero from '../assets/empresa-hero.jpg';
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.4);
     cursor: pointer;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    border: 2px solid rgba(203, 213, 225, 0.3);
   }
 
   .indicator.active {
-    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    background: var(--color-orange);
     transform: scale(1.2);
     box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: var(--color-orange);
   }
 
   .indicator:hover:not(.active) {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.6);
     transform: scale(1.1);
   }
 
   @media (max-width: 768px) {
     .hero {
       margin-top: 70px;
-      min-height: 80vh;
+      padding: 2rem 0;
     }
 
     .carousel {
@@ -367,54 +369,35 @@ import empresaHero from '../assets/empresa-hero.jpg';
     }
 
     .carousel-container {
-      margin: 1rem;
-      border-radius: 1rem;
+      margin: 0 1rem;
+      border-radius: 16px;
     }
 
     .carousel-slide {
-      flex-direction: column;
-      text-align: center;
-      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+      justify-content: center;
+    }
+
+    .carousel-slide::before {
+      background: linear-gradient(135deg, 
+        rgba(30, 41, 59, 0.9) 0%, 
+        rgba(30, 41, 59, 0.8) 50%, 
+        rgba(0, 0, 0, 0.6) 100%);
     }
 
     .slide-content {
-      padding: 2rem;
-      color: white;
-      z-index: 2;
+      padding: 2.5rem 2rem;
+      margin-left: 0;
+      max-width: 100%;
+      text-align: center;
     }
 
     .slide-content h1,
     .slide-content h2 {
       font-size: 2.5rem;
-      color: white;
-      background: none;
-      -webkit-text-fill-color: white;
     }
 
     .slide-content p {
       font-size: 1.1rem;
-      color: #e2e8f0;
-    }
-
-    .slide-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      border-radius: 1rem;
-    }
-
-    .slide-image::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      z-index: 1;
     }
 
     .carousel-btn {
@@ -431,6 +414,7 @@ import empresaHero from '../assets/empresa-hero.jpg';
     .cta-button {
       padding: 1rem 2rem;
       font-size: 1rem;
+      align-self: center;
     }
   }
 </style>
