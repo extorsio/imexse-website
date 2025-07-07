@@ -1,0 +1,172 @@
+---
+---
+
+<section class="coverage">
+  <div class="container">
+    <div class="coverage-content">
+      <div class="coverage-text">
+        <h2>Cobertura a Nivel Nacional</h2>
+        <p>Brindamos servicios de comercialización de productos mineros en todo el territorio peruano, garantizando la entrega segura y oportuna de nuestros productos a todas las regiones del país.</p>
+        <div class="coverage-stats">
+          <div class="stat">
+            <h3>24</h3>
+            <p>Regiones</p>
+          </div>
+          <div class="stat">
+            <h3>195</h3>
+            <p>Provincias</p>
+          </div>
+          <div class="stat">
+            <h3>22+</h3>
+            <p>Años de experiencia</p>
+          </div>
+        </div>
+      </div>
+      <div class="coverage-map">
+        <div class="peru-map">
+          <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+            <path d="M200 50 L350 150 L320 300 L250 450 L150 450 L80 300 L50 150 Z" fill="#1e40af" stroke="#0891b2" stroke-width="3"/>
+            <circle cx="200" cy="250" r="5" fill="#fbbf24"/>
+            <text x="210" y="255" font-family="Arial" font-size="12" fill="#fbbf24">Lima</text>
+            <circle cx="280" cy="200" r="3" fill="#fbbf24"/>
+            <text x="290" y="205" font-family="Arial" font-size="10" fill="#fbbf24">Huancayo</text>
+            <circle cx="150" cy="180" r="3" fill="#fbbf24"/>
+            <text x="120" y="175" font-family="Arial" font-size="10" fill="#fbbf24">Trujillo</text>
+            <circle cx="120" cy="300" r="3" fill="#fbbf24"/>
+            <text x="80" y="295" font-family="Arial" font-size="10" fill="#fbbf24">Arequipa</text>
+            <circle cx="250" cy="350" r="3" fill="#fbbf24"/>
+            <text x="260" y="355" font-family="Arial" font-size="10" fill="#fbbf24">Cusco</text>
+          </svg>
+        </div>
+        <div class="map-legend">
+          <div class="legend-item">
+            <div class="legend-color"></div>
+            <span>Cobertura Nacional</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-point"></div>
+            <span>Principales Ciudades</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .coverage {
+    padding: 4rem 0;
+    background: white;
+  }
+
+  .coverage-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .coverage-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1e40af;
+  }
+
+  .coverage-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #4b5563;
+  }
+
+  .coverage-stats {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ea580c;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat p {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0;
+  }
+
+  .coverage-map {
+    text-align: center;
+  }
+
+  .peru-map {
+    margin-bottom: 1rem;
+  }
+
+  .peru-map svg {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+  }
+
+  .map-legend {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+  }
+
+  .legend-color {
+    width: 20px;
+    height: 15px;
+    background: #1e40af;
+    border-radius: 2px;
+  }
+
+  .legend-point {
+    width: 10px;
+    height: 10px;
+    background: #fbbf24;
+    border-radius: 50%;
+  }
+
+  @media (max-width: 768px) {
+    .coverage-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .coverage-text h2 {
+      font-size: 2rem;
+    }
+
+    .coverage-stats {
+      justify-content: space-around;
+    }
+
+    .stat h3 {
+      font-size: 1.5rem;
+    }
+
+    .map-legend {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+</style>

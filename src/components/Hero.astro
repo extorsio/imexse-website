@@ -1,0 +1,427 @@
+---
+import { Image } from 'astro:assets';
+import cianuroUpscale from '../assets/cinauro_upscale.png';
+import sodaCaustica from '../assets/soda caustica.png';
+import empresaHero from '../assets/empresa-hero.jpg';
+---
+
+<section class="hero">
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-slide active">
+        <div class="slide-content">
+          <h1>Bienvenidos a IMEXSE S.R.L.</h1>
+          <p>Líderes en comercialización de productos mineros con más de 22 años de experiencia</p>
+          <a href="/productos" class="cta-button">Ver Productos</a>
+        </div>
+        <div class="slide-image">
+          <Image src={empresaHero} alt="Empresa IMEXSE" width={1260} height={750} />
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-content">
+          <h2>Cianuro de Sodio</h2>
+          <p>Disponible en presentaciones de cilindros de 50 kg y cajas de 1000 kg y 1100 kg</p>
+          <a href="/productos" class="cta-button">Más Información</a>
+        </div>
+        <div class="slide-image">
+          <Image src={cianuroUpscale} alt="Cilindros de Cianuro de Sodio 50kg" width={1408} height={1024} />
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="slide-content">
+          <h2>Soda Cáustica</h2>
+          <p>Productos mineros de alta calidad para la industria nacional</p>
+          <a href="/contacto" class="cta-button">Contactar</a>
+        </div>
+        <div class="slide-image">
+          <Image src={sodaCaustica} alt="Soda Cáustica" width={2048} height={2048} />
+        </div>
+      </div>
+    </div>
+    <div class="carousel-controls">
+      <button class="carousel-btn prev" onclick="changeSlide(-1)">‹</button>
+      <button class="carousel-btn next" onclick="changeSlide(1)">›</button>
+    </div>
+    <div class="carousel-indicators">
+      <span class="indicator active" onclick="currentSlide(1)"></span>
+      <span class="indicator" onclick="currentSlide(2)"></span>
+      <span class="indicator" onclick="currentSlide(3)"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+  let slideIndex = 1;
+  let slideInterval;
+
+  function showSlide(n) {
+    const slides = document.querySelectorAll('.carousel-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+    
+    slides[slideIndex - 1].classList.add('active');
+    indicators[slideIndex - 1].classList.add('active');
+  }
+
+  function changeSlide(n) {
+    showSlide(slideIndex += n);
+    resetAutoSlide();
+  }
+
+  function currentSlide(n) {
+    showSlide(slideIndex = n);
+    resetAutoSlide();
+  }
+
+  function nextSlide() {
+    showSlide(slideIndex += 1);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(nextSlide, 5000);
+  }
+
+  // Auto-advance slides
+  slideInterval = setInterval(nextSlide, 5000);
+
+  // Make functions globally available
+  window.changeSlide = changeSlide;
+  window.currentSlide = currentSlide;
+</script>
+
+<style>
+  .hero {
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+    padding-bottom: 2rem;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.1) 0%, transparent 25%),
+      radial-gradient(circle at 75% 75%, rgba(239, 68, 68, 0.1) 0%, transparent 25%),
+      radial-gradient(circle at 50% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 25%);
+    animation: gradientShift 20s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+  }
+
+  .carousel {
+    position: relative;
+    height: 600px;
+    z-index: 1;
+  }
+
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 2rem;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: scale(0.95) translateX(50px);
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%);
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+
+  .slide-content {
+    flex: 1;
+    padding: 4rem;
+    z-index: 2;
+    position: relative;
+  }
+
+  .slide-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+    border-radius: 1rem;
+    z-index: -1;
+  }
+
+  .slide-content h1,
+  .slide-content h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+  }
+
+  .slide-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-weight: 300;
+    opacity: 0.9;
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 50%, #b91c1c 100%);
+    color: white;
+    padding: 1.25rem 2.5rem;
+    border-radius: 3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 
+      0 10px 25px -5px rgba(234, 88, 12, 0.4),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
+  }
+
+  .cta-button:hover::before {
+    left: 100%;
+  }
+
+  .cta-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 
+      0 20px 40px -5px rgba(234, 88, 12, 0.6),
+      0 0 0 1px rgba(255, 255, 255, 0.2);
+  }
+
+  .slide-image {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    border-radius: 0 2rem 2rem 0;
+  }
+
+  .slide-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+    z-index: 1;
+  }
+
+  .slide-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+    filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  }
+
+  .carousel-slide.active .slide-image img {
+    transform: scale(1.05);
+  }
+
+  .carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  .carousel-btn {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  }
+
+  .carousel-btn:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.9) 0%, rgba(147, 51, 234, 0.9) 100%);
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 0 15px 35px -5px rgba(59, 130, 246, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+  }
+
+  .indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+  }
+
+  .indicator.active {
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .indicator:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      margin-top: 70px;
+      min-height: 80vh;
+    }
+
+    .carousel {
+      height: 500px;
+    }
+
+    .carousel-container {
+      margin: 1rem;
+      border-radius: 1rem;
+    }
+
+    .carousel-slide {
+      flex-direction: column;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
+    }
+
+    .slide-content {
+      padding: 2rem;
+      color: white;
+      z-index: 2;
+    }
+
+    .slide-content h1,
+    .slide-content h2 {
+      font-size: 2.5rem;
+      color: white;
+      background: none;
+      -webkit-text-fill-color: white;
+    }
+
+    .slide-content p {
+      font-size: 1.1rem;
+      color: #e2e8f0;
+    }
+
+    .slide-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border-radius: 1rem;
+    }
+
+    .slide-image::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.7);
+      z-index: 1;
+    }
+
+    .carousel-btn {
+      width: 50px;
+      height: 50px;
+      font-size: 1.25rem;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+    }
+
+    .cta-button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+  }
+</style>

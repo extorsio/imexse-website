@@ -1,0 +1,408 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+---
+
+<Layout title="Contacto - IMEXSE S.R.L.">
+  <Header />
+  <main class="contacto">
+    <section class="hero-section">
+      <div class="container">
+        <h1>Contáctenos</h1>
+        <p>Estamos aquí para atender sus consultas y brindarle la mejor solución en productos mineros</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-form">
+            <h2>Envíanos un mensaje</h2>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Nombre completo</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="company">Empresa</label>
+                <input type="text" id="company" name="company" />
+              </div>
+              <div class="form-group">
+                <label for="product">Producto de interés</label>
+                <select id="product" name="product">
+                  <option value="">Seleccione un producto</option>
+                  <option value="cianuro-cilindros-50kg">Cianuro de Sodio Cilindros 50kg</option>
+                  <option value="cianuro-cajas-1000kg">Cianuro de Sodio Cajas 1000kg</option>
+                  <option value="cianuro-cajas-1100kg">Cianuro de Sodio Cajas 1100kg</option>
+                  <option value="soda-caustica">Soda Cáustica</option>
+                  <option value="otros">Otros</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Mensaje</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+          </div>
+
+          <div class="contact-info">
+            <h2>Información de contacto</h2>
+            <div class="contact-cards">
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Teléfono</h3>
+                <p>+51 952810107</p>
+                <p>01 4224340</p>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Correo electrónico</h3>
+                <p>mfalconi@imexse.com</p>
+                <p>pfalconi@imexse.com</p>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Ubicación</h3>
+                <p>C. Gral. Suárez 1222, Miraflores</p>
+                <p>Lima, Perú</p>
+              </div>
+
+              <div class="contact-card">
+                <div class="contact-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="12,6 12,12 16,14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <h3>Horario de atención</h3>
+                <p>Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                <p>Sábados: 9:00 AM - 1:00 PM</p>
+              </div>
+            </div>
+
+            <div class="whatsapp-contact">
+              <h3>¿Necesita atención inmediata?</h3>
+              <p>Contáctenos directamente por WhatsApp para una respuesta rápida</p>
+              <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20información%20sobre%20sus%20productos%20mineros" class="whatsapp-btn" target="_blank">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488" fill="currentColor"/>
+                </svg>
+                Chatear por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-section">
+          <h2>Nuestra Ubicación</h2>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6755447447!2d-77.02760948570445!3d-12.108016648084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c81355f261d1%3A0xba8887f17e2ca713!2sC.%20Gral.%20Su%C3%A1rez%201222%2C%20Miraflores%2015046!5e0!3m2!1ses!2spe!4v1703123456789!5m2!1ses!2spe"
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <WhatsAppFloat />
+</Layout>
+
+<script>
+  document.getElementById('contactForm')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Simple form validation
+    if (!data.name || !data.email || !data.phone || !data.message) {
+      alert('Por favor complete todos los campos obligatorios');
+      return;
+    }
+    
+    // Show loading state
+    const submitBtn = form.querySelector('.btn-submit') as HTMLButtonElement;
+    if (!submitBtn) return;
+    
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+    
+    try {
+      // Send email using EmailJS or similar service
+      const emailData = {
+        to_email: 'christianx147@gmail.com',
+        from_name: data.name,
+        from_email: data.email,
+        phone: data.phone,
+        company: data.company || 'No especificada',
+        product: data.product || 'No especificado',
+        message: data.message,
+        subject: `Nuevo contacto desde IMEXSE - ${data.name}`
+      };
+      
+      // For now, we'll simulate the email sending
+      // In a real implementation, you would use a service like EmailJS, Formspree, or a backend API
+      console.log('Email data to send:', emailData);
+      
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      alert('Mensaje enviado correctamente. Nos pondremos en contacto con usted pronto.');
+      form.reset();
+      
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Hubo un error al enviar el mensaje. Por favor intente nuevamente o contáctenos directamente por WhatsApp.');
+    } finally {
+      if (originalText) {
+        submitBtn.textContent = originalText;
+      }
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+
+<style>
+  .contacto {
+    margin-top: 80px;
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero-section p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .contact-section {
+    padding: 4rem 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .contact-form h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1e40af;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: #1e40af;
+  }
+
+  .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(234, 88, 12, 0.3);
+  }
+
+  .btn-submit:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  .contact-info h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #1e40af;
+  }
+
+  .contact-cards {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #ea580c;
+  }
+
+  .contact-icon {
+    color: #1e40af;
+    margin-bottom: 1rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1e40af;
+  }
+
+  .contact-card p {
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+  }
+
+  .whatsapp-contact {
+    background: #f0fdf4;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    text-align: center;
+  }
+
+  .whatsapp-contact h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+
+  .whatsapp-contact p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+  }
+
+  .whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #25d366;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+  }
+
+  .whatsapp-btn:hover {
+    background: #1da851;
+  }
+
+  .map-section {
+    margin-top: 4rem;
+  }
+
+  .map-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1e40af;
+  }
+
+  .map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .contacto {
+      margin-top: 70px;
+    }
+
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .contact-form h2,
+    .contact-info h2 {
+      font-size: 1.5rem;
+    }
+
+    .map-section h2 {
+      font-size: 2rem;
+    }
+  }
+</style>

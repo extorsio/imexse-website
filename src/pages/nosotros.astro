@@ -1,0 +1,508 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+import industriaQuimica from '../assets/industria-quimica.jpg';
+import laboratorio from '../assets/laboratorio.jpg';
+import productos from '../assets/productos.jpg';
+---
+
+<Layout title="Nosotros - IMEXSE S.R.L.">
+  <Header />
+  <main class="nosotros">
+    <section class="hero-section">
+      <div class="hero-image">
+        <Image src={industriaQuimica} alt="Industria Química" width={1260} height={750} />
+        <div class="hero-overlay">
+          <div class="container">
+            <h1>Nosotros</h1>
+            <p>Más de 22 años de experiencia en el rubro minero</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="company-info">
+      <div class="container">
+        <div class="info-grid">
+          <div class="info-card">
+            <div class="info-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="9,12 12,15 16,11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Misión</h3>
+            <p>Comercializar productos mineros de la más alta calidad, garantizando la seguridad, eficiencia y confiabilidad en cada entrega. Nos comprometemos a satisfacer las necesidades de nuestros clientes a nivel nacional, manteniendo los más altos estándares de calidad y servicio.</p>
+          </div>
+
+          <div class="info-card">
+            <div class="info-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 12S4 6 12 6S23 12 23 12S20 18 12 18S1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Visión</h3>
+            <p>Ser la empresa líder en la comercialización de productos mineros en el Perú, reconocida por nuestra excelencia operativa, compromiso con la seguridad y capacidad de innovación. Aspiramos a expandir nuestra presencia regional y convertirnos en el socio estratégico preferido de la industria.</p>
+          </div>
+        </div>
+
+        <div class="experience-section">
+          <div class="experience-content">
+            <div class="experience-text">
+              <h2>22+ Años de Experiencia</h2>
+              <p>Desde nuestros inicios, IMEXSE S.R.L. ha sido sinónimo de calidad y confianza en el mercado de productos mineros. Nuestra larga trayectoria nos ha permitido desarrollar relaciones sólidas con proveedores internacionales y clientes nacionales.</p>
+              <div class="experience-highlights">
+                <div class="highlight">
+                  <h4>Experiencia Comprobada</h4>
+                  <p>Más de dos décadas en el mercado minero peruano</p>
+                </div>
+                <div class="highlight">
+                  <h4>Calidad Garantizada</h4>
+                  <p>Productos con certificaciones internacionales</p>
+                </div>
+                <div class="highlight">
+                  <h4>Servicio Integral</h4>
+                  <p>Desde la importación hasta la entrega final</p>
+                </div>
+              </div>
+            </div>
+            <div class="experience-images">
+              <Image src={laboratorio} alt="Laboratorio" width={600} height={400} />
+              <Image src={productos} alt="Productos" width={600} height={400} />
+            </div>
+          </div>
+        </div>
+
+        <div class="quality-section">
+          <h2>Compromiso con la Calidad</h2>
+          <div class="quality-grid">
+            <div class="quality-card">
+              <div class="quality-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Productos de Alta Pureza</h4>
+              <p>Todos nuestros productos mineros cumplen con estándares internacionales de pureza, garantizando la máxima eficiencia en sus procesos industriales.</p>
+            </div>
+            <div class="quality-card">
+              <div class="quality-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <polyline points="9,12 12,15 16,11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Confianza y Seguridad</h4>
+              <p>Mantenemos los más altos estándares de seguridad en el manejo, almacenamiento y transporte de productos mineros, protegiendo a nuestros clientes y al medio ambiente.</p>
+            </div>
+            <div class="quality-card">
+              <div class="quality-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Entrega Oportuna</h4>
+              <p>Nuestro sistema logístico garantiza entregas puntuales en todo el territorio nacional, manteniendo la cadena de frío y las condiciones óptimas de los productos.</p>
+            </div>
+            <div class="quality-card">
+              <div class="quality-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M23 21V19C23 18.1645 22.7155 17.3541 22.2094 16.7007C21.7033 16.0473 20.9999 15.5885 20.2 15.3949" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16 3.13C16.8003 3.32332 17.5037 3.78204 18.0098 4.43536C18.5159 5.08868 18.8003 5.89925 18.8003 6.735C18.8003 7.57075 18.5159 8.38132 18.0098 9.03464C17.5037 9.68796 16.8003 10.1467 16 10.34" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h4>Atención Personalizada</h4>
+              <p>Nuestro equipo de profesionales especializados brinda asesoría técnica personalizada para cada cliente, asegurando la mejor solución para sus necesidades específicas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="values-section">
+          <h2>Nuestros Valores</h2>
+          <div class="values-grid">
+            <div class="value-card">
+              <h4>Seguridad</h4>
+              <p>Priorizamos la seguridad en todos nuestros procesos, desde el almacenamiento hasta la entrega.</p>
+            </div>
+            <div class="value-card">
+              <h4>Calidad</h4>
+              <p>Mantenemos los más altos estándares de calidad en todos nuestros productos.</p>
+            </div>
+            <div class="value-card">
+              <h4>Confianza</h4>
+              <p>Construimos relaciones duraderas basadas en la transparencia y el cumplimiento.</p>
+            </div>
+            <div class="value-card">
+              <h4>Innovación</h4>
+              <p>Buscamos continuamente mejorar nuestros procesos y servicios.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="location-section">
+          <h2>Nuestra Ubicación</h2>
+          <p class="location-description">Nos encontramos estratégicamente ubicados en Miraflores, Lima, lo que nos permite brindar un servicio eficiente a nivel nacional.</p>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.6755447447!2d-77.03248578570445!3d-12.108016648084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c81355f261d1%3A0xba8887f17e2ca713!2sC.%20Gral.%20Su%C3%A1rez%201222%2C%20Miraflores%2015046!5e0!3m2!1ses!2spe!4v1703123456789!5m2!1ses!2spe"
+              width="100%" 
+              height="400" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div class="location-info">
+            <div class="location-detail">
+              <h4>Dirección</h4>
+              <p>C. Gral. Suárez 1222, Miraflores, Lima</p>
+            </div>
+            <div class="location-detail">
+              <h4>Cobertura</h4>
+              <p>Atendemos a todo el territorio peruano</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+  <WhatsAppFloat />
+</Layout>
+
+<style>
+  .nosotros {
+    margin-top: 80px;
+  }
+
+  .hero-section {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.8) 0%, rgba(8, 145, 178, 0.8) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+  }
+
+  .hero-overlay h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .company-info {
+    padding: 4rem 0;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+
+  .info-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .info-icon {
+    color: #1e40af;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+
+  .info-card p {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .experience-section {
+    background: #f8fafc;
+    padding: 3rem;
+    border-radius: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  .experience-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  .experience-text h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1e40af;
+  }
+
+  .experience-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #4b5563;
+  }
+
+  .experience-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .highlight h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #ea580c;
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight p {
+    color: #6b7280;
+    margin: 0;
+  }
+
+  .experience-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .experience-images img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+  .quality-section {
+    margin-bottom: 4rem;
+  }
+
+  .quality-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #1e40af;
+  }
+
+  .quality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .quality-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid #ea580c;
+    transition: transform 0.3s ease;
+  }
+
+  .quality-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .quality-icon {
+    color: #1e40af;
+    margin-bottom: 1rem;
+  }
+
+  .quality-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+
+  .quality-card p {
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+  .values-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    color: #1e40af;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .value-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-top: 4px solid #ea580c;
+  }
+
+  .value-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+
+  .value-card p {
+    color: #6b7280;
+    line-height: 1.5;
+  }
+
+  .location-section {
+    background: #f8fafc;
+    padding: 3rem;
+    border-radius: 1rem;
+  }
+
+  .location-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e40af;
+  }
+
+  .location-description {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #6b7280;
+    margin-bottom: 2rem;
+  }
+
+  .map-container {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+
+  .location-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .location-detail {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .location-detail h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+  }
+
+  .location-detail p {
+    color: #6b7280;
+  }
+
+  @media (max-width: 768px) {
+    .nosotros {
+      margin-top: 70px;
+    }
+
+    .hero-section {
+      height: 300px;
+    }
+
+    .hero-overlay h1 {
+      font-size: 2.5rem;
+    }
+
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .experience-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .experience-text h2 {
+      font-size: 2rem;
+    }
+
+    .experience-images {
+      grid-template-columns: 1fr;
+    }
+
+    .quality-section h2,
+    .values-section h2,
+    .location-section h2 {
+      font-size: 2rem;
+    }
+
+    .quality-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

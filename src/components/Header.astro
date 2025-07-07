@@ -1,0 +1,299 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<header class="header">
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">
+        <a href="/">
+          <svg width="320" height="63" viewBox="0 0 1024 194" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+            <!-- Ícono (rombo con círculo) -->
+            <g transform="translate(200, 57) scale(0.7)">
+              <rect x="0" y="0" width="80" height="80" transform="rotate(45 40 40)" stroke="white" stroke-width="10" fill="none" />
+              <rect x="20" y="20" width="40" height="40" transform="rotate(45 40 40)" stroke="white" stroke-width="10" fill="none" />
+              <circle cx="40" cy="40" r="10" fill="white" />
+            </g>
+            <!-- Texto principal IMEXSE -->
+            <text x="320" y="115" font-family="Georgia, serif" font-size="65" fill="white" font-weight="bold">IMEXSE</text>
+            <!-- Texto S.R.L. con líneas laterales -->
+            <line x1="320" y1="135" x2="390" y2="135" stroke="white" stroke-width="3"/>
+            <text x="400" y="145" font-family="Georgia, serif" font-size="30" fill="white" font-weight="bold">S.R.L.</text>
+            <line x1="500" y1="135" x2="570" y2="135" stroke="white" stroke-width="3"/>
+          </svg>
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Inicio</a></li>
+        <li><a href="/nosotros" class={currentPath === '/nosotros' ? 'active' : ''}>Nosotros</a></li>
+        <li><a href="/productos" class={currentPath === '/productos' ? 'active' : ''}>Productos</a></li>
+        <li><a href="/contacto" class={currentPath === '/contacto' ? 'active' : ''}>Contáctenos</a></li>
+      </ul>
+      <div class="mobile-menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 50%, #1d4ed8 100%);
+    backdrop-filter: blur(20px);
+    color: white;
+    padding: 0;
+    box-shadow: 
+      0 4px 20px rgba(30, 64, 175, 0.15),
+      0 1px 0 rgba(255, 255, 255, 0.1) inset;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    pointer-events: none;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    position: relative;
+  }
+
+  .logo {
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .logo a:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 8px rgba(251, 191, 36, 0.3));
+  }
+
+  .logo svg {
+    transition: all 0.3s ease;
+  }
+
+  .logo:hover svg {
+    filter: drop-shadow(0 2px 8px rgba(255, 255, 255, 0.2));
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav-links li {
+    position: relative;
+  }
+
+  .nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.025em;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+
+  .nav-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 12px;
+  }
+
+  .nav-links a:hover::before {
+    opacity: 1;
+  }
+
+  .nav-links a:hover {
+    color: #fbbf24;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.2);
+  }
+
+  .nav-links a.active {
+    color: #fbbf24;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.1));
+    box-shadow: 
+      0 4px 15px rgba(251, 191, 36, 0.2),
+      0 0 0 1px rgba(251, 191, 36, 0.2);
+    transform: translateY(-1px);
+  }
+
+  .nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6px;
+    height: 6px;
+    background: #fbbf24;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    position: relative;
+    z-index: 2;
+  }
+
+  .mobile-menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-menu-toggle span {
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 2px 0;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobile-menu-toggle:hover span {
+    background: #fbbf24;
+  }
+
+  /* Responsive animations */
+  @media (min-width: 769px) {
+    .nav-links {
+      animation: slideInFromTop 0.6s ease-out;
+    }
+
+    .logo {
+      animation: slideInFromLeft 0.6s ease-out;
+    }
+  }
+
+  @keyframes slideInFromTop {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      padding: 0;
+    }
+
+    .nav {
+      padding: 1rem 0;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
+      flex-direction: column;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(20px);
+    }
+
+    .nav-links.active {
+      display: flex;
+      animation: slideInFromTop 0.3s ease-out;
+    }
+
+    .nav-links li {
+      margin: 0;
+    }
+
+    .nav-links a {
+      padding: 1rem 2rem;
+      border-radius: 0;
+      text-align: center;
+      font-size: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links a:hover {
+      transform: none;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .mobile-menu-toggle {
+      display: flex;
+    }
+
+    .logo svg {
+      width: 250px;
+      height: 49px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo svg {
+      width: 200px;
+      height: 39px;
+    }
+
+    .nav {
+      padding: 0.875rem 0;
+    }
+  }
+</style>
