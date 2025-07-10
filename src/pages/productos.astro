@@ -7,38 +7,58 @@ import WhatsAppFloat from '../components/WhatsAppFloat.astro';
 import cianuroR from '../assets/cianuro_r.png';
 import cajasUpscale from '../assets/cajas_upscale.png';
 import sodaCaustica from '../assets/soda-caustica.png';
+import productos from '../assets/productos.jpg';
 ---
 
 <Layout title="Productos - IMEXSE S.R.L.">
   <Header />
   <main class="productos">
     <section class="hero-section">
-      <div class="container">
-        <h1>Nuestros Productos</h1>
-        <p>Productos mineros de alta calidad para la industria nacional</p>
+      <div class="hero-image">
+        <Image src={productos} alt="Productos Químicos" width={1260} height={750} />
+        <div class="hero-overlay">
+          <div class="container">
+            <h1>Nuestros Productos</h1>
+            <p>Productos químicos de alta calidad para la minería e industria</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="products-section">
+    <section class="cianuro-section">
       <div class="container">
+        <div class="cianuro-intro">
+          <h2>CIANURO DE SODIO</h2>
+          <div class="intro-content">
+            <p>Con un nivel de pureza no menor al <strong>98%</strong>, este producto destaca por su excelente calidad. Es fabricado por reconocidas compañías extranjeras del sector petroquímico, posicionados entre los mayores productores mundiales de cianuro.</p>
+            <p>Este compuesto se utiliza principalmente en procesos de recuperación de metales preciosos, como el oro y la plata, tanto en minería como en galvanoplastia.</p>
+            <p>La producción y distribución internacional se realizan bajo estrictos controles, en cumplimiento con el <strong>Código Internacional para el Manejo del Cianuro</strong>, garantizando prácticas responsables en términos de seguridad y sostenibilidad ambiental.</p>
+          </div>
+        </div>
+
         <div class="products-grid">
+          <!-- Cilindros 50kg -->
           <div class="product-card">
             <div class="product-image">
-              <Image src={cianuroR} width={500} height={250} alt="Cianuro de Sodio Cilindros 50kg" />
+              <Image src={cianuroR} width={500} height={350} alt="Cilindros de 50kg" />
+              <div class="product-badge">50 Kg</div>
             </div>
             <div class="product-info">
-              <h3>Cianuro de Sodio Cilindros 50kg</h3>
-              <p>Con un nivel de pureza no menor al 98 %, este producto destaca por su excelente calidad. Es fabricado por Taekwang, una reconocida compañía surcoreana del sector petroquímico, posicionada entre los mayores productores mundiales de cianuro. Gracias a su solidez industrial, ofrece un suministro confiable y precios competitivos.</p>
-              <br>
-              <p>Este compuesto se utiliza principalmente en procesos de recuperación de metales preciosos, como el oro y la plata, tanto en minería como en galvanoplastia.</p>
-              <br>
-              <p>Actualmente, sus principales compradores se ubican en regiones mineras clave como África, América del Sur, China y Rusia.</p>
-              <br>
-              <p>La producción y distribución internacional se realizan bajo estrictos controles, en cumplimiento con el Código Internacional para el Manejo del Cianuro, garantizando prácticas responsables en términos de seguridad y sostenibilidad ambiental.</p>
+              <h3>CILINDROS DE 50 Kg</h3>
+              <p>Cilindro de metal herméticamente cerrado, embolsado en su interior con polietileno de alta densidad y resistente al agua.</p>
               <div class="product-features">
-                <span class="feature">Pureza: 98%+</span>
-                <span class="feature">Certificado ISO</span>
-                <span class="feature">Embalaje seguro</span>
+                <div class="feature-item">
+                  <span class="feature-icon">🛡️</span>
+                  <span>Herméticamente cerrado</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">💧</span>
+                  <span>Resistente al agua</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">🔒</span>
+                  <span>Embalaje seguro</span>
+                </div>
               </div>
               <div class="product-actions">
                 <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20cotizar%20Cianuro%20de%20Sodio%20Cilindros%2050kg" target="_blank" rel="noopener noreferrer" class="btn-primary">Solicitar Cotización</a>
@@ -46,137 +66,236 @@ import sodaCaustica from '../assets/soda-caustica.png';
             </div>
           </div>
 
+          <!-- Cajas 1000kg y 1100kg -->
           <div class="product-card">
             <div class="product-image">
-              <Image src={cajasUpscale} width={500} height={250} alt="Cianuro de Sodio Cajas 1000kg" />
+              <Image src={cajasUpscale} width={500} height={350} alt="Cajas Big Box" />
+              <div class="product-badge">1000-1100 Kg</div>
             </div>
             <div class="product-info">
-              <h3>Cianuro de Sodio Cajas 1000kg</h3>
-              <p>Con un nivel de pureza no menor al 98 %, este producto destaca por su excelente calidad. Es fabricado por Taekwang, una reconocida compañía surcoreana del sector petroquímico, posicionada entre los mayores productores mundiales de cianuro. Gracias a su solidez industrial, ofrece un suministro confiable y precios competitivos.</p>
-              <br>
-              <p>Este compuesto se utiliza principalmente en procesos de recuperación de metales preciosos, como el oro y la plata, tanto en minería como en galvanoplastia.</p>
-              <br>
-              <p>Actualmente, sus principales compradores se ubican en regiones mineras clave como África, América del Sur, China y Rusia.</p>
-              <br>
-              <p>La producción y distribución internacional se realizan bajo estrictos controles, en cumplimiento con el Código Internacional para el Manejo del Cianuro, garantizando prácticas responsables en términos de seguridad y sostenibilidad ambiental.</p>
+              <h3>CAJAS DE MADERA DE 1000 y 1100 Kg (BIG BOX)</h3>
+              <p>Caja de madera chapeada, lleva en su interior un maxi saco compuesta por dos capas, una de polipropileno y otra de polietileno de alta densidad, resistente al agua. Los maxi sacos son empacados en una diseñada para exportación y apropiados para el transporte hasta su destino final.</p>
               <div class="product-features">
-                <span class="feature">Pureza: 98%+</span>
-                <span class="feature">Contenedor hermético</span>
-                <span class="feature">Fácil manejo</span>
+                <div class="feature-item">
+                  <span class="feature-icon">📦</span>
+                  <span>Diseño para exportación</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">🌊</span>
+                  <span>Doble capa protectora</span>
+                </div>
+                <div class="feature-item">
+                  <span class="feature-icon">🚛</span>
+                  <span>Transporte seguro</span>
+                </div>
               </div>
               <div class="product-actions">
-                <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20cotizar%20Cianuro%20de%20Sodio%20Cajas%201000kg" target="_blank" rel="noopener noreferrer" class="btn-primary">Solicitar Cotización</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <Image src={cajasUpscale} width={500} height={250} alt="Cianuro de Sodio Cajas 1100kg" />
-            </div>
-            <div class="product-info">
-              <h3>Cianuro de Sodio Cajas 1100kg</h3>
-              <p>Con un nivel de pureza no menor al 98 %, este producto destaca por su excelente calidad. Es fabricado por Taekwang, una reconocida compañía surcoreana del sector petroquímico, posicionada entre los mayores productores mundiales de cianuro. Gracias a su solidez industrial, ofrece un suministro confiable y precios competitivos.</p>
-              <br>
-              <p>Este compuesto se utiliza principalmente en procesos de recuperación de metales preciosos, como el oro y la plata, tanto en minería como en galvanoplastia.</p>
-              <br>
-              <p>Actualmente, sus principales compradores se ubican en regiones mineras clave como África, América del Sur, China y Rusia.</p>
-              <br>
-              <p>La producción y distribución internacional se realizan bajo estrictos controles, en cumplimiento con el Código Internacional para el Manejo del Cianuro, garantizando prácticas responsables en términos de seguridad y sostenibilidad ambiental.</p>
-              <div class="product-features">
-                <span class="feature">Pureza: 98%+</span>
-                <span class="feature">Máxima capacidad</span>
-                <span class="feature">Certificación internacional</span>
-              </div>
-              <div class="product-actions">
-                <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20cotizar%20Cianuro%20de%20Sodio%20Cajas%201100kg" target="_blank" rel="noopener noreferrer" class="btn-primary">Solicitar Cotización</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-image">
-              <Image src={sodaCaustica} width={500} height={250} alt="Soda Cáustica" />
-            </div>
-            <div class="product-info">
-              <h3>Soda Cáustica</h3>
-              <p>Soda cáustica de alta pureza, disponible en presentaciones de escamas o perlas, ideal para aplicaciones industriales exigentes.</p>
-              <div class="product-features">
-                <span class="feature">Pureza: 99%+</span>
-                <span class="feature">Múltiples aplicaciones</span>
-                <span class="feature">Grado alimentario</span>
-              </div>
-              <div class="product-actions">
-                <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20cotizar%20Soda%20Cáustica" target="_blank" rel="noopener noreferrer" class="btn-primary">Solicitar Cotización</a>
+                <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20cotizar%20Cianuro%20de%20Sodio%20Cajas%20Big%20Box" target="_blank" rel="noopener noreferrer" class="btn-primary">Solicitar Cotización</a>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="certifications-section">
-          <h2>Especialistas en Productos Mineros</h2>
-          <div class="certifications-grid">
-            <div class="cert-card">
-              <div class="cert-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M3 21h18l-9-18-9 18zM12 9v4m0 4h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h4>Soluciones para Minería</h4>
-              <p>Insumos mineros clave como cianuro de sodio para procesos de lixiviación.</p>
+    <!-- Servicio Integral -->
+    <section class="services-section">
+      <div class="container">
+        <h2>SERVICIO INTEGRAL</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-            <div class="cert-card">
-              <div class="cert-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h9l4-4 4 4h1z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h4>Productos de Alta Pureza</h4>
-              <p>Productos con estándares certificados para uso industrial.</p>
+            <h3>Transporte</h3>
+            <p>Mercadería puesta en la unidad minera</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
             </div>
-            <div class="cert-card">
-              <div class="cert-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-                  <path d="M16 8l-6 6-2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+            <h3>Supervisión / Escolta</h3>
+            <p>Camioneta + técnico MATPEL + Paramédico</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>KIT de Respuesta a Emergencias</h3>
+            <p>Equipamiento completo para emergencias</p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">
+              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 16V8A2 2 0 0019 6H5A2 2 0 003 8V16A2 2 0 005 18H19A2 2 0 0021 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M7 12H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Servicio de Paletizado</h3>
+            <p>Incluye zunchos + film protector</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modalidades de Venta -->
+    <section class="sales-section">
+      <div class="container">
+        <h2>MODALIDADES DE VENTA</h2>
+        <div class="sales-grid">
+          <div class="sales-card">
+            <div class="sales-number">1</div>
+            <h3>Stock Local</h3>
+            <p>Stock permanente de <strong>100 toneladas</strong>, para cumplir con el objetivo de abastecimiento y garantizar el oportuno y adecuado suministro del producto, según las necesidades de cada cliente.</p>
+            <div class="sales-features">
+              <span class="sales-feature">✅ Disponibilidad inmediata</span>
+              <span class="sales-feature">✅ 100 toneladas en stock</span>
+              <span class="sales-feature">✅ Suministro garantizado</span>
+            </div>
+          </div>
+          <div class="sales-card">
+            <div class="sales-number">2</div>
+            <h3>Pedido Directo o Importación</h3>
+            <div class="import-details">
+              <div class="detail-item">
+                <strong>Orden mínima:</strong> 01 contenedor de 20' (18, 20 o 22 toneladas)
               </div>
-              <h4>Seguridad y Logística Garantizada</h4>
-              <p>Transporte y almacenamiento bajo protocolos estrictos y normativa vigente.</p>
+              <div class="detail-item">
+                <strong>Tiempo de entrega:</strong> 45 días aproximados desde inicio de la comercialización
+              </div>
+              <div class="detail-note">
+                Sujeto a la Licencia de Exportación y 30 días posteriores a la fecha del conocimiento de embarque (B/L)
+              </div>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="testimonials-section">
-          <h2>Solicitar Cotización</h2>
-          <div class="contact-options">
-            <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20solicitar%20una%20cotización%20de%20productos%20mineros" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp-card">
-              <div class="contact-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.51 3.488"/>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <h4>WhatsApp</h4>
-                <p>Contáctanos directamente</p>
-              </div>
-            </a>
-            
-            <a href="mailto:mfalconi@imexse.com,pfalconi@imexse.com?subject=Solicitud%20de%20Cotización%20-%20Productos%20Mineros&body=Estimados%20señores%2C%0A%0AMe%20dirijo%20a%20ustedes%20para%20solicitar%20una%20cotización%20de%20productos%20mineros.%0A%0AEstaré%20atento%20a%20su%20respuesta.%0A%0ASaludos%20cordiales." class="contact-card email-card">
-              <div class="contact-icon">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                  <polyline points="22,6 12,13 2,6"/>
-                </svg>
-              </div>
-              <div class="contact-info">
-                <h4>Correo Electrónico</h4>
-                <p>Envíanos tu consulta</p>
-              </div>
-            </a>
+    <!-- Servicio Integral Detallado -->
+    <section class="detailed-services">
+      <div class="container">
+        <div class="service-details-grid">
+          <!-- Paletizada -->
+          <div class="detail-card">
+            <div class="detail-header">
+              <h3>PALETIZADA</h3>
+              <div class="detail-icon">📦</div>
+            </div>
+            <p>Cilindros agrupados sobre un PALET o PALETA, para fácil manejo de traslado, transportar y distribuir la mercadería final de forma segura.</p>
+            <div class="advantages">
+              <h4>Ventajas:</h4>
+              <ul>
+                <li>Reduce riesgos de daños en la manipulación</li>
+                <li>Disminuye los tiempos de carga y descarga de camiones</li>
+              </ul>
+            </div>
           </div>
+
+          <!-- Transporte -->
+          <div class="detail-card">
+            <div class="detail-header">
+              <h3>TRANSPORTE</h3>
+              <div class="detail-icon">🚛</div>
+            </div>
+            <p>El transporte, es un servicio adicional que se brinda a solicitud del cliente. Para realizar este servicio, disponemos de una logística integral que planifica y programa las salidas desde el almacén (Lima) hacia la unidad minera a nivel nacional.</p>
+            <div class="escort-info">
+              <h4>Escolta:</h4>
+              <p>Tendrá una supervisión permanente durante todo el traslado y, será escoltado por vehículos provistos con el equipamiento de respuesta a incidentes primarios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Procedencia -->
+    <section class="origin-section">
+      <div class="container">
+        <h2>Procedencia de Cianuro de Sodio</h2>
+        <div class="origin-grid">
+          <div class="origin-card">
+            <div class="country-flag">🇰🇷</div>
+            <h3>Corea del Sur</h3>
+            <div class="origin-details">
+              <div class="detail-row">
+                <span class="label">Proveedor:</span>
+                <span class="value">TAEKWANG INDUSTRIAL CO., LIMITED</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Fabricante:</span>
+                <span class="value">TAE KWANG</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="origin-card">
+            <div class="country-flag">🇧🇷</div>
+            <h3>Brasil</h3>
+            <div class="origin-details">
+              <div class="detail-row">
+                <span class="label">Proveedor:</span>
+                <span class="value">PROQUIGEL QUIMICA S.A</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Fabricante:</span>
+                <span class="value">Unigel</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="origin-card">
+            <div class="country-flag">🇨🇳</div>
+            <h3>China</h3>
+            <div class="origin-details">
+              <div class="detail-row">
+                <span class="label">Proveedor:</span>
+                <span class="value">HEBEI CHENGXIN</span>
+              </div>
+              <div class="detail-row">
+                <span class="label">Fabricante:</span>
+                <span class="value">Chengxin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="contact-section">
+      <div class="container">
+        <h2>Solicitar Cotización</h2>
+        <div class="contact-options">
+          <a href="https://wa.me/51952810107?text=Hola%2C%20me%20interesa%20solicitar%20una%20cotización%20de%20productos%20químicos" target="_blank" rel="noopener noreferrer" class="contact-card whatsapp-card">
+            <div class="contact-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.51 3.488"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h4>WhatsApp</h4>
+              <p>+51 952810107</p>
+            </div>
+          </a>
+          
+          <a href="mailto:mfalconi@imexse.com,pfalconi@imexse.com?subject=Solicitud%20de%20Cotización%20-%20Productos%20Químicos&body=Estimados%20señores%2C%0A%0AMe%20dirijo%20a%20ustedes%20para%20solicitar%20una%20cotización%20de%20productos%20químicos.%0A%0AEstaré%20atento%20a%20su%20respuesta.%0A%0ASaludos%20cordiales." class="contact-card email-card">
+            <div class="contact-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <h4>Correo Electrónico</h4>
+              <p>mfalconi@imexse.com</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -186,202 +305,882 @@ import sodaCaustica from '../assets/soda-caustica.png';
 </Layout>
 
 <style>
+  /* Animaciones y keyframes */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(234, 88, 12, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(234, 88, 12, 0.6);
+    }
+  }
+
   .productos {
     margin-top: 80px;
+    overflow-x: hidden;
   }
 
+  /* Hero Section */
   .hero-section {
-    background: linear-gradient(135deg, #1e40af 0%, #0891b2 100%);
-    color: white;
-    padding: 4rem 0;
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+  }
+
+  .hero-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .hero-image img, .hero-image astro-island, .hero-image picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.8s ease;
+  }
+
+  .hero-image:hover img {
+    transform: scale(1.05);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+      rgba(30, 64, 175, 0.85) 0%, 
+      rgba(59, 130, 246, 0.75) 50%, 
+      rgba(96, 165, 250, 0.65) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    color: #ffffff;
+    backdrop-filter: blur(3px) saturate(150%);
+    animation: fadeInUp 1s ease-out;
   }
 
-  .hero-section h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    color: white;
+  .hero-overlay h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, #ffffff, #e0f2fe, #ffffff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 3s ease-in-out infinite;
   }
 
-  .hero-section p {
+  .hero-overlay p {
+    font-size: 1.4rem;
+    opacity: 0.95;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    max-width: 800px;
+    line-height: 1.6;
+    animation: fadeInUp 1s ease-out 0.3s both;
+  }
+
+  /* Cianuro Section */
+  .cianuro-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+  }
+
+  .cianuro-intro {
+    text-align: center;
+    margin-bottom: 6rem;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .cianuro-intro h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 3rem;
+    color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  .cianuro-intro h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    border-radius: 2px;
+  }
+
+  .intro-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .intro-content p {
     font-size: 1.2rem;
-    opacity: 0.9;
-    color: white;
+    line-height: 1.8;
+    color: #374151;
+    margin-bottom: 2rem;
+    font-weight: 500;
   }
 
-  .products-section {
-    padding: 4rem 0;
+  .intro-content strong {
+    color: #ea580c;
+    font-weight: 700;
   }
 
+  /* Products Grid */
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 3rem;
-    margin-bottom: 4rem;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 4rem;
+    margin-bottom: 6rem;
   }
 
   .product-card {
-    background: white;
-    border-radius: 1rem;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 2rem;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    position: relative;
+    animation: scaleIn 0.6s ease-out;
+  }
+
+  .product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+  }
+
+  .product-card:hover::before {
+    left: 100%;
   }
 
   .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
   }
 
   .product-image {
-    height: 250px;
+    height: 350px;
     overflow: hidden;
+    position: relative;
   }
 
   .product-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .product-card:hover .product-image img {
+    transform: scale(1.1);
+  }
+
+  .product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+    animation: float 3s ease-in-out infinite;
   }
 
   .product-info {
-    padding: 2rem;
+    padding: 3rem;
+    position: relative;
+    z-index: 2;
   }
 
   .product-info h3 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
     color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .product-info p {
-    color: #6b7280;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    font-weight: 500;
   }
 
   .product-features {
     display: flex;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
 
-  .feature {
-    background: #f3f4f6;
-    color: #1e40af;
-    padding: 0.25rem 0.75rem;
+  .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(59, 130, 246, 0.05);
     border-radius: 1rem;
-    font-size: 0.875rem;
-    font-weight: 500;
+    border-left: 4px solid #3b82f6;
+    transition: all 0.3s ease;
+  }
+
+  .feature-item:hover {
+    transform: translateX(10px);
+    background: rgba(59, 130, 246, 0.1);
+  }
+
+  .feature-icon {
+    font-size: 1.5rem;
   }
 
   .product-actions {
     display: flex;
-    gap: 1rem;
+    justify-content: center;
   }
 
   .btn-primary {
     background: linear-gradient(135deg, #ea580c 0%, #dc2626 100%);
     color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    transition: transform 0.3s ease;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
     text-align: center;
     border: none;
     cursor: pointer;
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-primary:hover::before {
+    left: 100%;
   }
 
   .btn-primary:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.05);
     color: white;
+    box-shadow: 0 15px 30px rgba(234, 88, 12, 0.4);
   }
 
-  .certifications-section {
-    background: #f8fafc;
-    padding: 3rem;
-    border-radius: 1rem;
+  /* Services Section */
+  .services-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .services-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
     margin-bottom: 4rem;
-  }
-
-  .certifications-section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
     color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
   }
 
-  .certifications-grid {
+  .services-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    border-radius: 2px;
+  }
+
+  .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
   }
 
-  .cert-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
+  .service-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3rem;
+    border-radius: 2rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: scaleIn 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
   }
 
-  .cert-icon {
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(45deg, #ea580c, #f97316, #fbbf24);
+    border-radius: 2rem 2rem 0 0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  .service-icon {
+    color: #1e40af;
+    margin-bottom: 2rem;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+
+  .service-card:hover .service-icon {
     color: #ea580c;
+    transform: scale(1.1);
+  }
+
+  .service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .service-card p {
+    color: #4b5563;
+    line-height: 1.6;
+    font-weight: 500;
+  }
+
+  /* Sales Section */
+  .sales-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .sales-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  .sales-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    border-radius: 2px;
+  }
+
+  .sales-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 4rem;
+  }
+
+  .sales-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    position: relative;
+    animation: scaleIn 0.6s ease-out;
+    transition: all 0.4s ease;
+  }
+
+  .sales-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .sales-number {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 800;
+    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  .sales-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 2rem 0 1.5rem;
+    color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sales-card p {
+    color: #4b5563;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .sales-features {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sales-feature {
+    padding: 0.75rem 1rem;
+    background: rgba(34, 197, 94, 0.1);
+    border-radius: 1rem;
+    color: #059669;
+    font-weight: 600;
+    border-left: 4px solid #10b981;
+  }
+
+  .import-details {
+    background: rgba(59, 130, 246, 0.05);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+  }
+
+  .detail-item {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    color: #374151;
+    font-weight: 500;
+  }
+
+  .detail-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: 1rem;
+    color: #92400e;
+    font-style: italic;
+    border-left: 4px solid #f59e0b;
+  }
+
+  /* Detailed Services */
+  .detailed-services {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 50%, #fef3c7 100%);
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .service-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 4rem;
+  }
+
+  .detail-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(234, 88, 12, 0.2);
+    animation: scaleIn 0.6s ease-out;
+    transition: all 0.4s ease;
+  }
+
+  .detail-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    border-color: rgba(234, 88, 12, 0.4);
+  }
+
+  .detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .detail-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ea580c;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .detail-icon {
+    font-size: 3rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .detail-card p {
+    color: #4b5563;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  .advantages h4,
+  .escort-info h4 {
+    color: #1e40af;
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 1rem;
   }
 
-  .cert-card h4 {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #1e40af;
+  .advantages ul {
+    list-style: none;
+    padding: 0;
   }
 
-  .cert-card p {
-    color: #6b7280;
+  .advantages li {
+    padding: 0.75rem 0;
+    color: #4b5563;
+    position: relative;
+    padding-left: 2rem;
+    font-weight: 500;
   }
 
-  .testimonials-section h2 {
+  .advantages li::before {
+    content: "✓";
+    color: #10b981;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  /* Origin Section */
+  .origin-section {
+    padding: 6rem 0;
+    background: linear-gradient(135dega, #dbeafe 0%, #bfdbfe 50%, #dbeafe 100%);
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .origin-section h2 {
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 3rem;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
     color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  .origin-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    border-radius: 2px;
+  }
+
+  .origin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  .origin-card {
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3rem;
+    border-radius: 2rem;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.1);
+    animation: scaleIn 0.6s ease-out;
+    transition: all 0.4s ease;
+  }
+
+  .origin-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  .country-flag {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .origin-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .origin-details {
+    text-align: left;
+  }
+
+  .detail-row {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .label {
+    font-weight: 700;
+    color: #ea580c;
+    min-width: 100px;
+    flex-shrink: 0;
+  }
+
+  .value {
+    color: #4b5563;
+    font-weight: 500;
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .contact-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  .contact-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    border-radius: 2px;
   }
 
   .contact-options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
     max-width: 800px;
     margin: 0 auto;
   }
 
   .contact-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
     color: inherit;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
     border: 2px solid transparent;
+    animation: scaleIn 0.6s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+  }
+
+  .contact-card:hover::before {
+    left: 100%;
   }
 
   .contact-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    color: inherit;
+    color: white;
   }
 
   .whatsapp-card {
@@ -389,9 +1188,7 @@ import sodaCaustica from '../assets/soda-caustica.png';
   }
 
   .whatsapp-card:hover {
-    border-color: #25d366;
     background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-    color: white;
   }
 
   .email-card {
@@ -399,73 +1196,315 @@ import sodaCaustica from '../assets/soda-caustica.png';
   }
 
   .email-card:hover {
-    border-color: #1e40af;
     background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-    color: white;
   }
 
   .contact-icon {
     flex-shrink: 0;
-    width: 64px;
-    height: 64px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 1rem;
+    border-radius: 2rem;
     transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
   }
 
   .whatsapp-card .contact-icon {
-    background: #25d366;
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
     color: white;
   }
 
   .email-card .contact-icon {
-    background: #1e40af;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
     color: white;
   }
 
   .contact-info h4 {
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
     color: inherit;
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .contact-card:hover .contact-info h4 {
+    -webkit-text-fill-color: white;
   }
 
   .contact-info p {
     color: #6b7280;
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin: 0;
+    font-weight: 600;
   }
 
   .contact-card:hover .contact-info p {
     color: rgba(255, 255, 255, 0.9);
   }
 
+  /* Responsive Design */
   @media (max-width: 768px) {
     .productos {
       margin-top: 70px;
     }
 
-    .hero-section h1 {
+    .hero-section {
+      height: 400px;
+    }
+
+    .hero-overlay h1 {
       font-size: 2.5rem;
+      letter-spacing: -1px;
+    }
+
+    .hero-overlay p {
+      font-size: 1.1rem;
+      padding: 0 1rem;
+    }
+
+    .cianuro-section,
+    .services-section,
+    .sales-section,
+    .detailed-services,
+    .origin-section,
+    .contact-section {
+      padding: 4rem 1rem;
+    }
+
+    .cianuro-intro h2,
+    .services-section h2,
+    .sales-section h2,
+    .origin-section h2,
+    .contact-section h2 {
+      font-size: 2.2rem;
+    }
+
+    .intro-content p {
+      font-size: 1.1rem;
     }
 
     .products-grid {
       grid-template-columns: 1fr;
+      gap: 3rem;
     }
 
-    .product-actions {
-      justify-content: center;
+    .product-card {
+      margin: 0 1rem;
     }
 
-    .certifications-section h2,
-    .testimonials-section h2 {
+    .product-info {
+      padding: 2rem;
+    }
+
+    .product-info h3 {
+      font-size: 1.5rem;
+    }
+
+    .services-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .service-card {
+      padding: 2rem;
+    }
+
+    .sales-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .sales-card {
+      padding: 2rem;
+    }
+
+    .service-details-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .detail-card {
+      padding: 2rem;
+    }
+
+    .detail-header {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .detail-header h3 {
+      font-size: 1.6rem;
+    }
+
+    .origin-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .origin-card {
+      padding: 2rem;
+    }
+
+    .origin-card h3 {
+      font-size: 1.5rem;
+    }
+
+    .contact-options {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 0 1rem;
+    }
+
+    .contact-card {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .contact-icon {
+      width: 70px;
+      height: 70px;
+    }
+
+    /* Animaciones más suaves en móviles */
+    .product-card:hover,
+    .service-card:hover,
+    .sales-card:hover,
+    .detail-card:hover,
+    .origin-card:hover,
+    .contact-card:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-overlay h1 {
       font-size: 2rem;
     }
 
-    .testimonials-grid {
-      grid-template-columns: 1fr;
+    .hero-overlay p {
+      font-size: 1rem;
     }
+
+    .cianuro-intro h2,
+    .services-section h2,
+    .sales-section h2,
+    .origin-section h2,
+    .contact-section h2 {
+      font-size: 1.8rem;
+    }
+
+    .intro-content p {
+      font-size: 1rem;
+    }
+
+    .product-info,
+    .service-card,
+    .sales-card,
+    .detail-card,
+    .origin-card,
+    .contact-card {
+      padding: 1.5rem;
+    }
+
+    .product-info h3 {
+      font-size: 1.3rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .sales-card h3 {
+      font-size: 1.5rem;
+    }
+
+    .detail-header h3 {
+      font-size: 1.4rem;
+    }
+
+    .origin-card h3 {
+      font-size: 1.3rem;
+    }
+
+    .contact-info h4 {
+      font-size: 1.3rem;
+    }
+
+    .country-flag {
+      font-size: 3rem;
+    }
+
+    .detail-icon {
+      font-size: 2.5rem;
+    }
+  }
+
+  /* Animaciones para elementos que entran en vista */
+  @media (prefers-reduced-motion: no-preference) {
+    .product-card,
+    .service-card,
+    .sales-card,
+    .detail-card,
+    .origin-card {
+      animation-delay: 0.1s;
+    }
+
+    .product-card:nth-child(2),
+    .service-card:nth-child(2),
+    .sales-card:nth-child(2),
+    .origin-card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .product-card:nth-child(3),
+    .service-card:nth-child(3),
+    .origin-card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    .service-card:nth-child(4) {
+      animation-delay: 0.4s;
+    }
+  }
+
+  /* Efectos especiales adicionales */
+  .hero-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* Scroll reveal animation */
+  @media (prefers-reduced-motion: no-preference) {
+    .cianuro-section,
+    .services-section,
+    .sales-section,
+    .detailed-services,
+    .origin-section,
+    .contact-section {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .cianuro-section { animation-delay: 0.1s; }
+    .services-section { animation-delay: 0.2s; }
+    .sales-section { animation-delay: 0.3s; }
+    .detailed-services { animation-delay: 0.4s; }
+    .origin-section { animation-delay: 0.5s; }
+    .contact-section { animation-delay: 0.6s; }
   }
 </style>
