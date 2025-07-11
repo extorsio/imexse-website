@@ -6,10 +6,13 @@ import sodaCaustica from '../assets/soda-caustica.png';
 import empresaHero from '../assets/empresa-hero.jpg';
 ---
 
+<!-- Preload de imagen LCP crítica -->
+<link rel="preload" as="image" href={empresaHero.src} fetchpriority="high" />
+
 <section class="hero">
   <div class="carousel">
     <div class="carousel-container">
-      <div class="carousel-slide active" data-bg={empresaHero.src}>
+      <div class="carousel-slide active" data-bg={empresaHero.src} style={`background-image: url(${empresaHero.src})`}>
         <div class="slide-content">
           <h1>Bienvenidos a IMEXSE S.R.L.</h1>
           <p>Líderes en comercialización de productos mineros con más de 30 años de experiencia</p>
@@ -53,26 +56,36 @@ import empresaHero from '../assets/empresa-hero.jpg';
 
   let slideIndex: number = 1;
   let slideInterval: number | undefined;
+  let slides: NodeListOf<HTMLElement>;
+  let indicators: NodeListOf<Element>;
 
-  function showSlide(n: number): void {
-    const slides = document.querySelectorAll('.carousel-slide') as NodeListOf<HTMLElement>;
-    const indicators = document.querySelectorAll('.indicator');
+  function initializeCarousel(): void {
+    slides = document.querySelectorAll('.carousel-slide') as NodeListOf<HTMLElement>;
+    indicators = document.querySelectorAll('.indicator');
     
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    
-    slides.forEach((slide, index) => {
-      slide.classList.remove('active');
+    // Pre-set all background images to avoid style recalculation
+    slides.forEach((slide) => {
       const bgUrl = slide.getAttribute('data-bg');
       if (bgUrl) {
         slide.style.backgroundImage = `url(${bgUrl})`;
       }
     });
+  }
+
+  function showSlide(n: number): void {
+    if (!slides || !indicators) return;
     
-    indicators.forEach(indicator => indicator.classList.remove('active'));
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
     
-    slides[slideIndex - 1].classList.add('active');
-    indicators[slideIndex - 1].classList.add('active');
+    // Use requestAnimationFrame to batch DOM updates
+    requestAnimationFrame(() => {
+      slides.forEach(slide => slide.classList.remove('active'));
+      indicators.forEach(indicator => indicator.classList.remove('active'));
+      
+      slides[slideIndex - 1].classList.add('active');
+      indicators[slideIndex - 1].classList.add('active');
+    });
   }
 
   function changeSlide(n: number): void {
@@ -96,17 +109,20 @@ import empresaHero from '../assets/empresa-hero.jpg';
     slideInterval = setInterval(nextSlide, 5000) as unknown as number;
   }
 
-  // Auto-advance slides
-  slideInterval = setInterval(nextSlide, 5000) as unknown as number;
+  // Auto-advance slides - inicializar después del DOM
+  document.addEventListener('DOMContentLoaded', () => {
+    initializeCarousel();
+    showSlide(slideIndex);
+    slideInterval = setInterval(nextSlide, 5000) as unknown as number;
+    
+    // Agregar listeners pasivos para mejor scroll performance
+    document.addEventListener('touchstart', function() {}, { passive: true });
+    document.addEventListener('touchmove', function() {}, { passive: true });
+  });
 
   // Make functions globally available
-  window.changeSlide = changeSlide;
-  window.currentSlide = currentSlide;
-
-  document.addEventListener('DOMContentLoaded', () => {
-    showSlide(slideIndex);
-    resetAutoSlide();
-  });
+  (window as any).changeSlide = changeSlide;
+  (window as any).currentSlide = currentSlide;
 </script>
 
 <style>
@@ -161,6 +177,9 @@ import empresaHero from '../assets/empresa-hero.jpg';
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: local;
+    /* Optimizaciones de performance */
+    will-change: opacity, transform;
+    contain: layout style paint;
   }
 
   .carousel-slide {
