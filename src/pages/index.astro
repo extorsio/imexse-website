@@ -7,9 +7,18 @@ import ProductsSlider from '../components/ProductsSlider.astro';
 import Coverage from '../components/Coverage.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+
+const pageTitle = "IMEXSE S.R.L. - Venta de Cianuro de Sodio y Productos Químicos para Minería Perú";
+const pageDescription = "Venta de cianuro de sodio, soda cáustica y productos químicos para minería en Perú. IMEXSE S.R.L. distribuye reactivos mineros de alta calidad con cobertura nacional. Solicite cotización.";
+const pageKeywords = "venta cianuro de sodio, productos químicos minería, cianuro sodio Perú, reactivos mineros, soda cáustica, venta productos químicos, IMEXSE, distribución química Lima Callao, comprar cianuro sodio";
 ---
 
-<Layout title="IMEXSE S.R.L. - Productos Mineros">
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical="https://imexse.com/"
+>
   <Header />
   <Hero />
   <Intro />

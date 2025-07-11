@@ -1,19 +1,168 @@
 ---
 export interface Props {
   title: string;
+  description?: string;
+  keywords?: string;
+  ogImage?: string;
+  canonical?: string;
 }
 
-const { title } = Astro.props;
+const { 
+  title, 
+  description = "Venta de cianuro de sodio y productos químicos para minería en Perú. IMEXSE S.R.L. distribuye reactivos mineros de alta calidad con cobertura nacional desde Callao. Cotización inmediata.",
+  keywords = "venta cianuro de sodio, productos químicos minería, cianuro sodio Perú, soda cáustica, IMEXSE, distribución química Callao Lima, comprar cianuro, reactivos mineros",
+  ogImage = "/og-image.jpg",
+  canonical = Astro.url.href
+} = Astro.props;
+
+const siteTitle = title.includes('IMEXSE') ? title : `${title} | IMEXSE S.R.L.`;
 ---
 
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="author" content="IMEXSE S.R.L." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="sitemap" href="/sitemap.xml" />
+    
+    <!-- Mobile Optimization -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="IMEXSE - Cianuro de Sodio" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="HandheldFriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    
+    <!-- Touch Icons for Mobile -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.svg" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="IMEXSE S.R.L." />
+    <meta property="og:locale" content="es_PE" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="theme-color" content="#1e293b" />
+    <meta name="msapplication-TileColor" content="#1e293b" />
+    <meta name="application-name" content="IMEXSE S.R.L." />
+    <meta name="apple-mobile-web-app-title" content="IMEXSE" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    
+    <!-- Geographic Meta Tags -->
+    <meta name="geo.region" content="PE-CAL" />
+    <meta name="geo.placename" content="Callao, Peru" />
+    <meta name="geo.position" content="-11.9801424;-77.1309889" />
+    <meta name="ICBM" content="-11.9801424, -77.1309889" />
+    
+    <!-- Additional Local SEO -->
+    <meta name="locality" content="Callao" />
+    <meta name="region" content="Lima" />
+    <meta name="country" content="Peru" />
+    
+    <!-- Search Engine Specific -->
+    <meta name="google-site-verification" content="pendiente-configurar" />
+    <meta name="msvalidate.01" content="pendiente-configurar" />
+    
+    <!-- Mobile and Touch Optimization -->
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-orientations" content="portrait" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "IMEXSE S.R.L.",
+      "url": "https://imexse.com",
+      "logo": "https://imexse.com/logo.png",
+      "description": "Venta de cianuro de sodio y productos químicos para minería en Perú. Distribuidora especializada con más de 30 años de experiencia.",
+      "slogan": "Venta de Cianuro de Sodio y Productos Químicos para Minería",
+      "foundingDate": "1990",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "AV. A. NRO. 204 FND. EX FUNDO OQUENDO",
+        "addressLocality": "Callao",
+        "addressRegion": "Callao",
+        "postalCode": "07001",
+        "addressCountry": "PE"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+51-952810107",
+          "contactType": "sales",
+          "email": "mfalconi@imexse.com",
+          "areaServed": "PE",
+          "availableLanguage": "Spanish",
+          "description": "Venta de cianuro de sodio y cotizaciones"
+        },
+        {
+          "@type": "ContactPoint",
+          "telephone": "+51-952810107",
+          "contactType": "customer service",
+          "email": "pfalconi@imexse.com",
+          "areaServed": "PE",
+          "availableLanguage": "Spanish"
+        }
+      ],
+      "sameAs": [
+        "https://wa.me/51952810107"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Productos Químicos para Minería",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Cianuro de Sodio",
+              "category": "Productos Químicos para Minería"
+            }
+          },
+          {
+            "@type": "Offer", 
+            "itemOffered": {
+              "@type": "Product",
+              "name": "Soda Cáustica",
+              "category": "Productos Químicos Industriales"
+            }
+          }
+        ]
+      },
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Venta de Cianuro de Sodio",
+          "description": "Venta especializada de cianuro de sodio para la industria minera"
+        }
+      ]
+    }
+    </script>
+    
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{siteTitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -160,12 +309,42 @@ const { title } = Astro.props;
   }
 
   @media (max-width: 768px) {
+    html {
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
     h3 { font-size: 1.5rem; }
     
     .section-padding {
       padding: 3rem 0;
+    }
+    
+    /* Touch targets mínimo 44px para accesibilidad móvil */
+    button, .btn, a[role="button"] {
+      min-height: 44px;
+      min-width: 44px;
+    }
+  }
+  
+  /* Optimización para pantallas pequeñas */
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    
+    .section-padding {
+      padding: 2rem 0;
     }
   }
 </style>

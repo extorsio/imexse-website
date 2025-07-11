@@ -1,0 +1,28 @@
+{
+  "name": "IMEXSE S.R.L. - Venta de Cianuro de Sodio",
+  "short_name": "IMEXSE",
+  "description": "Venta de cianuro de sodio y productos químicos para minería en Perú",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1e293b",
+  "theme_color": "#1e293b",
+  "orientation": "portrait-primary",
+  "categories": ["business", "productivity"],
+  "lang": "es-PE",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "form_factor": "wide"
+    }
+  ]
+}

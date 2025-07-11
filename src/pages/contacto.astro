@@ -3,10 +3,57 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppFloat from '../components/WhatsAppFloat.astro';
+
+const pageTitle = "Cotización Cianuro de Sodio - Contacto Venta Productos Químicos";
+const pageDescription = "Solicite cotización para venta de cianuro de sodio y productos químicos para minería. IMEXSE S.R.L. ofrece precios competitivos, entrega rápida y asesoramiento técnico especializado en Lima y todo Perú.";
+const pageKeywords = "cotización cianuro sodio, precio cianuro sodio, venta productos químicos, contacto IMEXSE, asesoramiento técnico minería, WhatsApp químicos, comprar reactivos mineros";
 ---
 
-<Layout title="Contacto - IMEXSE S.R.L.">
+<Layout 
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonical="https://imexse.com/contacto"
+>
   <Header />
+  
+  <!-- Structured Data for Contact Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto IMEXSE S.R.L.",
+    "description": "Página de contacto para solicitar cotizaciones y información sobre productos químicos para minería",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "IMEXSE S.R.L.",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+51-952810107",
+          "contactType": "customer service",
+          "areaServed": "PE",
+          "availableLanguage": "Spanish"
+        },
+        {
+          "@type": "ContactPoint", 
+          "email": "mfalconi@imexse.com",
+          "contactType": "sales",
+          "areaServed": "PE",
+          "availableLanguage": "Spanish"
+        },
+        {
+          "@type": "ContactPoint",
+          "email": "pfalconi@imexse.com", 
+          "contactType": "sales",
+          "areaServed": "PE",
+          "availableLanguage": "Spanish"
+        }
+      ]
+    }
+  }
+  </script>
+  
   <main class="contacto">
     <section class="hero-section">
       <div class="container">
