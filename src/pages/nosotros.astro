@@ -35,27 +35,39 @@ const pageKeywords = "sobre IMEXSE, historia empresa química Perú, distribuido
 
     <section class="company-info">
       <div class="container">
-        <div class="info-grid">
-          <div class="info-card">
-            <div class="info-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <polyline points="9,12 12,15 16,11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+        <div class="mission-vision-container">
+          <div class="mission-vision-card mission-card">
+            <div class="card-header">
+              <div class="card-icon mission-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"/>
+                  <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="card-connector mission-connector"></div>
             </div>
-            <h3>Misión</h3>
-            <p>Satisfacer las necesidades de nuestros clientes manteniendo los más altos estándares de calidad y servicio</p>
+            <div class="card-content">
+              <h3>MISIÓN</h3>
+              <p>Satisfacer las necesidades de nuestros clientes manteniendo los más altos estándares de calidad y servicio</p>
+            </div>
           </div>
 
-          <div class="info-card">
-            <div class="info-icon">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 12S4 6 12 6S23 12 23 12S20 18 12 18S1 12 1 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+          <div class="mission-vision-card vision-card">
+            <div class="card-header">
+              <div class="card-icon vision-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2a7 7 0 0 0-7 7c0 2.96 1.54 5.54 3.86 7l.14.2c.28.38.72.8 1.16.8h3.68c.44 0 .88-.42 1.16-.8l.14-.2A6.98 6.98 0 0 0 19 9a7 7 0 0 0-7-7z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M9.5 18h5" stroke="currentColor" stroke-width="2"/>
+                  <path d="M10 21h4" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="card-connector vision-connector"></div>
             </div>
-            <h3>Visión</h3>
-            <p>Ser una empresa líder en la comercialización de productos químicos distribuidos a nivel nacional, reconocida por nuestra excelencia operativa, compromiso con la seguridad y capacidad de innovación. Aspiramos a expandir nuestros productos al sector industria en general.</p>
+            <div class="card-content">
+              <h3>VISIÓN</h3>
+              <p>Ser una empresa líder en la comercialización de productos químicos distribuidos a nivel nacional, reconocida por nuestra excelencia operativa, compromiso con la seguridad y capacidad de innovación. Aspiramos a expandir nuestros productos al sector industria en general.</p>
+            </div>
           </div>
         </div>
 
@@ -122,22 +134,69 @@ const pageKeywords = "sobre IMEXSE, historia empresa química Perú, distribuido
 
         <div class="values-section">
           <h2>Nuestros Valores</h2>
-          <div class="values-grid">
-            <div class="value-card">
-              <h4>Seguridad</h4>
-              <p>Priorizamos la seguridad en todas nuestras operaciones, desde el almacenamiento hasta la entrega del producto.</p>
+          <div class="values-container">
+            <div class="value-card security-card">
+              <div class="card-header">
+                <div class="card-icon security-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7V10C2 16 6 20.5 12 22C18 20.5 22 16 22 10V7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>SEGURIDAD</h3>
+                <p>Priorizamos la seguridad en todas nuestras operaciones, garantizando procedimientos confiables.</p>
+              </div>
             </div>
-            <div class="value-card">
-              <h4>Calidad</h4>
-              <p>Nos esforzamos por mantener la excelencia en cada producto que comercializamos.</p>
+
+            <div class="value-card quality-card">
+              <div class="card-header">
+                <div class="card-icon quality-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L3 7L12 12L21 7L12 2Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 17L12 22L21 17" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 12L12 17L21 12" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>CALIDAD</h3>
+                <p>Excelencia en cada producto que comercializamos, manteniendo los más altos estándares.</p>
+              </div>
             </div>
-            <div class="value-card">
-              <h4>Confianza</h4>
-              <p>Establecemos con nuestros proveedores y clientes, conexiones perdurables y solidos mediante la sinceridad, honestidad, transparencia, cumplimiento y responsabilidad.</p>
+
+            <div class="value-card trust-card">
+              <div class="card-header">
+                <div class="card-icon trust-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16 21V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v16" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 9h1" stroke="currentColor" stroke-width="2"/>
+                    <path d="M8 13h1" stroke="currentColor" stroke-width="2"/>
+                    <path d="M16 8L18 6L22 10L20 12" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>CONFIANZA</h3>
+                <p>Transparencia y responsabilidad en cada relación comercial, construyendo vínculos duraderos.</p>
+              </div>
             </div>
-            <div class="value-card">
-              <h4>Innovación</h4>
-              <p>Estamos comprometidos con la mejora continua de nuestros procesos y servicios.</p>
+
+            <div class="value-card innovation-card">
+              <div class="card-header">
+                <div class="card-icon innovation-icon">
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a7 7 0 0 0-7 7c0 2.96 1.54 5.54 3.86 7l.14.2c.28.38.72.8 1.16.8h3.68c.44 0 .88-.42 1.16-.8l.14-.2A6.98 6.98 0 0 0 19 9a7 7 0 0 0-7-7z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M9.5 18h5" stroke="currentColor" stroke-width="2"/>
+                    <path d="M10 21h4" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="card-content">
+                <h3>INNOVACIÓN</h3>
+                <p>Mejora continua de procesos, adaptándonos a las nuevas tecnologías del mercado.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -402,6 +461,207 @@ const pageKeywords = "sobre IMEXSE, historia empresa química Perú, distribuido
   .company-info {
     padding: 6rem 0;
     background: linear-gradient(180deg, #f8fafc 0%, #ffffff 50%, #f1f5f9 100%);
+  }
+
+  /* Mission & Vision Modern Design */
+  .mission-vision-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin-bottom: 6rem;
+    position: relative;
+    padding: 2rem 0;
+  }
+
+  .mission-vision-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    padding: 0;
+    max-width: 450px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .mission-vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  }
+
+  .card-header {
+    height: 120px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.5rem 1.5rem 0 0;
+  }
+
+  .mission-card .card-header {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  }
+
+  .vision-card .card-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  }
+
+  .card-icon {
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .mission-icon {
+    color: #ef4444;
+  }
+
+  .vision-icon {
+    color: #3b82f6;
+  }
+
+  .mission-vision-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .card-connector {
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 2px;
+  }
+
+  .mission-connector {
+    right: -30px;
+    background: linear-gradient(90deg, #ef4444, #f97316);
+    z-index: 1;
+  }
+
+  .vision-connector {
+    left: -30px;
+    background: linear-gradient(90deg, #f97316, #3b82f6);
+    z-index: 1;
+  }
+
+  .card-content {
+    padding: 2.5rem;
+    text-align: center;
+  }
+
+  .card-content h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+
+  .mission-card h3 {
+    color: #ef4444;
+  }
+
+  .vision-card h3 {
+    color: #3b82f6;
+  }
+
+  .card-content p {
+    color: #4b5563;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+
+  /* Connection Line Between Cards */
+  .mission-vision-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #ef4444 0%, #f97316 50%, #3b82f6 100%);
+    border-radius: 2px;
+    z-index: 0;
+  }
+
+  /* Responsive Design for Mission & Vision */
+  @media (max-width: 768px) {
+    .mission-vision-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .mission-vision-container::before {
+      width: 4px;
+      height: 80px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(90deg);
+      background: linear-gradient(90deg, #ef4444 0%, #f97316 50%, #3b82f6 100%);
+    }
+
+    .mission-connector,
+    .vision-connector {
+      display: none;
+    }
+
+    .mission-vision-card {
+      max-width: 400px;
+    }
+
+    .card-content {
+      padding: 2rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .mission-vision-container {
+      padding: 1rem;
+      gap: 2rem;
+    }
+
+    .mission-vision-card {
+      max-width: 100%;
+    }
+
+    .card-header {
+      height: 100px;
+    }
+
+    .card-icon {
+      width: 70px;
+      height: 70px;
+    }
+
+    .card-content {
+      padding: 1.5rem;
+    }
+
+    .card-content h3 {
+      font-size: 1.3rem;
+    }
+
+    .card-content p {
+      font-size: 1rem;
+    }
   }
 
   .info-grid {
@@ -669,11 +929,38 @@ const pageKeywords = "sobre IMEXSE, historia empresa química Perú, distribuido
   }
 
   .values-section {
-    padding: 4rem 0;
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+    padding: 3rem 0;
+    background: linear-gradient(135deg, 
+      #f1f5f9 0%, 
+      #e2e8f0 25%, 
+      #cbd5e1 50%, 
+      #94a3b8 75%, 
+      #64748b 100%);
     border-radius: 2rem;
     margin-bottom: 6rem;
     animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .values-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(234, 88, 12, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(248, 250, 252, 0.8) 0%, rgba(241, 245, 249, 0.6) 100%);
+    z-index: 1;
+  }
+
+  .values-section > * {
+    position: relative;
+    z-index: 2;
   }
 
   .values-section h2 {
@@ -701,24 +988,28 @@ const pageKeywords = "sobre IMEXSE, historia empresa química Perú, distribuido
     border-radius: 2px;
   }
 
-  .values-grid {
+  /* Values Container - Grid Layout */
+  .values-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
     padding: 0 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
   }
 
+  /* Individual Value Cards */
   .value-card {
     background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
-    padding: 2.5rem;
-    border-radius: 2rem;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border-top: 5px solid transparent;
-    position: relative;
+    border-radius: 1.2rem;
+    padding: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
     overflow: hidden;
-    animation: scaleIn 0.6s ease-out;
+    animation: fadeInUp 0.8s ease-out;
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   .value-card::before {
@@ -727,33 +1018,206 @@ const pageKeywords = "sobre IMEXSE, historia empresa química Perú, distribuido
     top: 0;
     left: 0;
     right: 0;
-    height: 5px;
-    background: linear-gradient(45deg, #ea580c, #f97316, #fbbf24);
-    border-radius: 2rem 2rem 0 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(255, 255, 255, 0.9) 0%, 
+      rgba(248, 250, 252, 0.7) 50%, 
+      rgba(241, 245, 249, 0.8) 100%);
+    z-index: 1;
+    border-radius: 1.2rem;
+  }
+
+  .value-card > * {
+    position: relative;
+    z-index: 2;
   }
 
   .value-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-    animation: pulse 2s ease-in-out infinite;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 
-  .value-card h4 {
-    font-size: 1.4rem;
+  .value-card .card-header {
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.2rem 1.2rem 0 0;
+  }
+
+  /* Security Card */
+  .security-card .card-header {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  }
+
+  .security-icon {
+    color: #dc2626;
+  }
+
+  .security-card h3 {
+    color: #dc2626;
+  }
+
+  /* Quality Card */
+  .quality-card .card-header {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  }
+
+  .quality-icon {
+    color: #059669;
+  }
+
+  .quality-card h3 {
+    color: #059669;
+  }
+
+  /* Trust Card */
+  .trust-card .card-header {
+    background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+  }
+
+  .trust-icon {
+    color: #ea580c;
+  }
+
+  .trust-card h3 {
+    color: #ea580c;
+  }
+
+  /* Innovation Card */
+  .innovation-card .card-header {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  }
+
+  .innovation-icon {
+    color: #7c3aed;
+  }
+
+  .innovation-card h3 {
+    color: #7c3aed;
+  }
+
+  .value-card .card-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .value-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .value-card .card-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .value-card .card-content h3 {
+    font-size: 1.2rem;
     font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #1e40af;
-    background: linear-gradient(45deg, #1e40af, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
   }
 
-  .value-card p {
+  .value-card .card-content p {
     color: #4b5563;
-    line-height: 1.8;
-    font-size: 1.05rem;
+    line-height: 1.6;
+    font-size: 0.9rem;
     font-weight: 500;
+  }
+
+  /* Responsive Design for Values */
+  @media (max-width: 1200px) {
+    .values-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .values-section {
+      padding: 2.5rem 1rem;
+    }
+
+    .values-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      padding: 0 0.5rem;
+    }
+
+    .value-card .card-content {
+      padding: 1.2rem;
+    }
+
+    .value-card .card-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .value-card .card-content p {
+      font-size: 0.85rem;
+    }
+
+    .values-section h2 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .value-card .card-header {
+      height: 70px;
+    }
+
+    .value-card .card-icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .values-container {
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+
+    .values-section {
+      padding: 2rem 0.5rem;
+    }
+
+    .value-card .card-header {
+      height: 65px;
+    }
+
+    .value-card .card-icon {
+      width: 45px;
+      height: 45px;
+    }
+
+    .value-card .card-content {
+      padding: 1rem;
+    }
+
+    .value-card .card-content h3 {
+      font-size: 1rem;
+    }
+
+    .value-card .card-content p {
+      font-size: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .values-section h2 {
+      font-size: 1.8rem;
+    }
   }
 
   .location-section {
@@ -1319,53 +1783,6 @@ const pageKeywords = "sobre IMEXSE, historia empresa química Perú, distribuido
   }
 
   /* Animaciones para elementos que entran en vista */
-  @media (prefers-reduced-motion: no-preference) {
-    .info-card,
-    .quality-card,
-    .value-card,
-    .facility-card {
-      animation-delay: 0.1s;
-    }
-
-    .info-card:nth-child(2),
-    .quality-card:nth-child(2),
-    .value-card:nth-child(2) {
-      animation-delay: 0.2s;
-    }
-
-    .info-card:nth-child(3),
-    .quality-card:nth-child(3),
-    .value-card:nth-child(3) {
-      animation-delay: 0.3s;
-    }
-
-    .info-card:nth-child(4),
-    .quality-card:nth-child(4),
-    .value-card:nth-child(4) {
-      animation-delay: 0.4s;
-    }
-
-    .products-list li:nth-child(1) { animation-delay: 0.1s; }
-    .products-list li:nth-child(2) { animation-delay: 0.2s; }
-    .products-list li:nth-child(3) { animation-delay: 0.3s; }
-    .products-list li:nth-child(4) { animation-delay: 0.4s; }
-    .products-list li:nth-child(5) { animation-delay: 0.5s; }
-  }
-
-  /* Efectos especiales adicionales */
-  .hero-overlay::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  /* Scroll reveal animation */
   @media (prefers-reduced-motion: no-preference) {
     .company-info > *,
     .quality-section,

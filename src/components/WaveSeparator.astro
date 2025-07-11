@@ -1,0 +1,68 @@
+---
+// Componente reutilizable para separadores ondulados
+interface Props {
+  topColor?: string;
+  midColor?: string;
+  lowColor?: string;
+  height?: string;
+  className?: string;
+}
+
+const { 
+  topColor = '#041B2D',    // Azul oscuro corporativo
+  midColor = '#0E6FA3',    // Azul medio corporativo  
+  lowColor = '#3B82F6',    // Azul claro para profundidad
+  height = '160px',
+  className = ''
+} = Astro.props;
+---
+
+<div class={`wave-wrapper ${className}`} aria-hidden="true">
+  <svg viewBox="0 0 1440 160" class="wave-svg" preserveAspectRatio="none">
+    <!-- Onda 1 (capa posterior) -->
+    <path 
+      d="M0,80 C360,120 720,40 1440,80 L1440,160 L0,160 Z" 
+      fill={topColor} 
+      opacity="1"
+    />
+    <!-- Onda 2 (capa intermedia) -->
+    <path 
+      d="M0,100 C360,140 720,60 1440,100 L1440,160 L0,160 Z" 
+      fill={midColor} 
+      opacity="0.85"
+    />
+    <!-- Onda 3 (capa frontal) -->
+    <path 
+      d="M0,120 C360,160 720,80 1440,120 L1440,160 L0,160 Z" 
+      fill={lowColor} 
+      opacity="0.7"
+    />
+  </svg>
+</div>
+
+<style define:vars={{ height }}>
+  .wave-wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px; /* Evita línea blanca por antialiasing */
+    width: 100%;
+    height: var(--height);
+    overflow: hidden;
+    line-height: 0;
+    z-index: 5; /* Por encima del carrusel pero debajo de controles */
+    pointer-events: none; /* No interfiere con interacciones */
+  }
+  
+  .wave-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .wave-wrapper {
+      height: calc(var(--height) * 0.75); /* Reduce altura en móvil */
+    }
+  }
+</style>

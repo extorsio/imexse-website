@@ -1,9 +1,10 @@
 ---
-import { Image } from 'astro:assets';
-import cianuroR from '../assets/cianuro_r.png';
-import productos from '../assets/productos.jpg';
-import sodaCaustica from '../assets/soda-caustica.png';
-import empresaHero from '../assets/empresa-hero.jpg';
+import { Image } from "astro:assets";
+import cianuroR from "../assets/cianuro_r.png";
+import productos from "../assets/productos.jpg";
+import sodaCaustica from "../assets/soda-caustica.png";
+import empresaHero from "../assets/empresa-hero.jpg";
+// import WaveSeparator from './WaveSeparator.astro'; // No se usará
 ---
 
 <!-- Preload de imagen LCP crítica -->
@@ -12,21 +13,31 @@ import empresaHero from '../assets/empresa-hero.jpg';
 <section class="hero">
   <div class="carousel">
     <div class="carousel-container">
-      <div class="carousel-slide active" data-bg={empresaHero.src} style={`background-image: url(${empresaHero.src})`}>
+      <div
+        class="carousel-slide active"
+        data-bg={empresaHero.src}
+        style={`background-image: url(${empresaHero.src})`}
+      >
         <div class="slide-content">
           <h1>Bienvenidos a IMEXSE S.R.L.</h1>
-          <p>Líderes en comercialización de productos mineros con más de 30 años de experiencia</p>
+          <p>
+            Líderes en comercialización de productos mineros con más de 30 años
+            de experiencia
+          </p>
           <a href="/nosotros" class="cta-button">Nosotros</a>
         </div>
       </div>
       <div class="carousel-slide" data-bg={cianuroR.src}>
         <div class="slide-content">
           <h2>Cianuro de Sodio</h2>
-          <p>Disponible en presentaciones de cilindros de 50 kg y cajas de 1000 kg y 1100 kg</p>
+          <p>
+            Disponible en presentaciones de cilindros de 50 kg y cajas de 1000
+            kg y 1100 kg
+          </p>
           <a href="/productos" class="cta-button">Productos</a>
         </div>
       </div>
-  <div class="carousel-slide" data-bg={sodaCaustica.src}>
+      <div class="carousel-slide" data-bg={sodaCaustica.src}>
         <div class="slide-content">
           <h2>Soda Cáustica</h2>
           <p>Productos mineros de alta calidad para la industria nacional</p>
@@ -38,12 +49,15 @@ import empresaHero from '../assets/empresa-hero.jpg';
       <button class="carousel-btn prev" onclick="changeSlide(-1)">‹</button>
       <button class="carousel-btn next" onclick="changeSlide(1)">›</button>
     </div>
-    <div class="carousel-indicators">
+    <!-- Se eliminan los indicadores para un look más limpio -->
+    <!-- <div class="carousel-indicators">
       <span class="indicator active" onclick="currentSlide(1)"></span>
       <span class="indicator" onclick="currentSlide(2)"></span>
       <span class="indicator" onclick="currentSlide(3)"></span>
-    </div>
+    </div> -->
   </div>
+
+  <!-- Se elimina el separador de ondas -->
 </section>
 
 <script>
@@ -60,12 +74,14 @@ import empresaHero from '../assets/empresa-hero.jpg';
   let indicators: NodeListOf<Element>;
 
   function initializeCarousel(): void {
-    slides = document.querySelectorAll('.carousel-slide') as NodeListOf<HTMLElement>;
-    indicators = document.querySelectorAll('.indicator');
-    
+    slides = document.querySelectorAll(
+      ".carousel-slide",
+    ) as NodeListOf<HTMLElement>;
+    indicators = document.querySelectorAll(".indicator");
+
     // Pre-set all background images to avoid style recalculation
     slides.forEach((slide) => {
-      const bgUrl = slide.getAttribute('data-bg');
+      const bgUrl = slide.getAttribute("data-bg");
       if (bgUrl) {
         slide.style.backgroundImage = `url(${bgUrl})`;
       }
@@ -74,32 +90,36 @@ import empresaHero from '../assets/empresa-hero.jpg';
 
   function showSlide(n: number): void {
     if (!slides || !indicators) return;
-    
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    
+
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
     // Use requestAnimationFrame to batch DOM updates
     requestAnimationFrame(() => {
-      slides.forEach(slide => slide.classList.remove('active'));
-      indicators.forEach(indicator => indicator.classList.remove('active'));
-      
-      slides[slideIndex - 1].classList.add('active');
-      indicators[slideIndex - 1].classList.add('active');
+      slides.forEach((slide) => slide.classList.remove("active"));
+      indicators.forEach((indicator) => indicator.classList.remove("active"));
+
+      slides[slideIndex - 1].classList.add("active");
+      indicators[slideIndex - 1].classList.add("active");
     });
   }
 
   function changeSlide(n: number): void {
-    showSlide(slideIndex += n);
+    showSlide((slideIndex += n));
     resetAutoSlide();
   }
 
   function currentSlide(n: number): void {
-    showSlide(slideIndex = n);
+    showSlide((slideIndex = n));
     resetAutoSlide();
   }
 
   function nextSlide(): void {
-    showSlide(slideIndex += 1);
+    showSlide((slideIndex += 1));
   }
 
   function resetAutoSlide(): void {
@@ -111,17 +131,17 @@ import empresaHero from '../assets/empresa-hero.jpg';
 
   // Add passive event listeners for better scroll performance
   function addPassiveEventListeners() {
-    window.addEventListener('touchstart', () => {}, { passive: true });
-    window.addEventListener('touchmove', () => {}, { passive: true });
-    window.addEventListener('wheel', () => {}, { passive: true });
+    window.addEventListener("touchstart", () => {}, { passive: true });
+    window.addEventListener("touchmove", () => {}, { passive: true });
+    window.addEventListener("wheel", () => {}, { passive: true });
   }
 
   // Auto-advance slides - inicializar después del DOM
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener("DOMContentLoaded", () => {
     initializeCarousel();
     showSlide(slideIndex);
     slideInterval = setInterval(nextSlide, 5000) as unknown as number;
-    
+
     addPassiveEventListeners();
   });
 
@@ -137,10 +157,12 @@ import empresaHero from '../assets/empresa-hero.jpg';
     overflow: hidden;
     background: var(--color-white);
     padding: 0;
-    height: calc(100vh - 80px);
-    max-height: 800px;
+    height: calc(
+      100vh - 80px
+    ); /* Ocupa el alto de la pantalla menos el header */
+    max-height: 100vh; /* Permitir que ocupe toda la altura */
     min-height: 500px;
-    padding-bottom: 80px; /* Add padding to avoid content being cut off */
+    padding-bottom: 0;
   }
 
   .hero::before {
@@ -174,7 +196,7 @@ import empresaHero from '../assets/empresa-hero.jpg';
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center; /* Centrar contenido horizontalmente */
     opacity: 0;
     transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: scale(1.05);
@@ -193,51 +215,47 @@ import empresaHero from '../assets/empresa-hero.jpg';
     background-repeat: no-repeat !important;
     background-color: #222;
     transform: scale(1.05);
-    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition:
+      opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .carousel-slide.active {
     opacity: 1;
     transform: scale(0.95);
-    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition:
+      opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .carousel-slide::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, 
-      rgba(17, 24, 39, 0.6) 0%, 
-      rgba(17, 24, 39, 0.4) 40%, 
-      rgba(3, 105, 161, 0.2) 70%, 
-      rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(
+      180deg,
+      #041b2d 0%,
+      rgba(4, 27, 45, 0.65) 35%,
+      rgba(4, 27, 45, 0.15) 70%
+    );
     z-index: 1;
     transition: background 0.5s ease;
   }
 
-  .carousel-slide:nth-child(2)::before,
-  .carousel-slide:nth-child(3)::before {
-    background: linear-gradient(135deg, 
-      rgba(17, 24, 39, 0.65) 0%, 
-      rgba(17, 24, 39, 0.45) 30%, 
-      rgba(3, 105, 161, 0.25) 60%, 
-      rgba(0, 0, 0, 0.15) 100%);
-  }
-
   .slide-content {
     flex: 0 0 auto;
-    max-width: 700px;
-    padding: 4rem;
+    max-width: 800px; /* Aumentar ancho máximo para contenido centrado */
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
     z-index: 2;
-    margin-left: 5%;
-    text-align: left;
+    margin-left: 0; /* Eliminar margen izquierdo */
+    text-align: center; /* Centrar texto */
     animation: fadeInContent 1.5s 0.5s ease-out forwards;
     opacity: 0;
   }
@@ -255,21 +273,21 @@ import empresaHero from '../assets/empresa-hero.jpg';
 
   .slide-content h1,
   .slide-content h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 4rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
-    color: var(--color-white);
+    color: #ffffff;
     line-height: 1.2;
     letter-spacing: -0.5px;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
   }
 
   .slide-content p {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.4rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.25rem;
     margin-bottom: 2.5rem;
-    color: rgba(255, 255, 255, 0.95);
+    color: #e6e8eb;
     line-height: 1.7;
     font-weight: 400;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -281,30 +299,35 @@ import empresaHero from '../assets/empresa-hero.jpg';
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
-    background: linear-gradient(45deg, var(--color-orange), #f97316);
-    color: var(--color-white);
+    background: #ff6b00;
+    color: #ffffff;
     padding: 1.25rem 2.5rem;
-    border-radius: 50px;
-    font-family: 'Montserrat', sans-serif;
+    border-radius: 32px;
+    font-family: "Montserrat", sans-serif;
     font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(234, 88, 12, 0.3), 0 0 0 4px rgba(255, 255, 255, 0);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
     text-decoration: none;
     position: relative;
     overflow: hidden;
-    align-self: flex-start;
+    align-self: center; /* Centrar botón */
     border: none;
   }
 
   .cta-button::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
     transition: left 0.6s;
   }
 
@@ -313,62 +336,53 @@ import empresaHero from '../assets/empresa-hero.jpg';
   }
 
   .cta-button:hover {
-    background: linear-gradient(45deg, #f97316, #ea580c);
+    background: #e55b00;
     transform: translateY(-5px) scale(1.05);
-    box-shadow: 0 15px 30px rgba(234, 88, 12, 0.4), 0 0 0 4px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
   }
 
   .carousel-controls {
     position: absolute;
     top: 50%;
-    left: 0;
-    right: 0;
+    left: 1rem; /* Pegado a los bordes */
+    right: 1rem; /* Pegado a los bordes */
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    padding: 0 2rem;
+    padding: 0;
     pointer-events: none;
     z-index: 10;
   }
 
   .carousel-btn {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--color-white);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 50px;
-    height: 50px;
+    background: transparent; /* Sin fondo */
+    color: rgba(255, 255, 255, 0.7);
+    border: none; /* Sin borde */
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 3rem; /* Flechas más grandes */
     cursor: pointer;
     transition: all 0.3s ease;
     pointer-events: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(5px);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: none; /* Sin blur */
+    box-shadow: none; /* Sin sombra */
   }
 
   .carousel-btn:hover {
-    background: var(--color-orange);
+    background: rgba(0, 0, 0, 0.2);
     color: var(--color-white);
     transform: scale(1.1);
-    box-shadow: 0 8px 20px rgba(234, 88, 12, 0.3);
+    box-shadow: none;
     border-color: transparent;
   }
 
   .carousel-indicators {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 1rem;
-    z-index: 10;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 0.75rem 1.5rem;
-    border-radius: 50px;
-    backdrop-filter: blur(5px);
+    display: none; /* Ocultar indicadores */
   }
 
   .indicator {
@@ -398,7 +412,7 @@ import empresaHero from '../assets/empresa-hero.jpg';
     .hero {
       margin-top: 70px;
       height: calc(100vh - 70px);
-      padding-bottom: 60px;
+      padding-bottom: 0;
     }
 
     .carousel {
@@ -415,10 +429,12 @@ import empresaHero from '../assets/empresa-hero.jpg';
     }
 
     .carousel-slide::before {
-      background: linear-gradient(135deg, 
-        rgba(17, 24, 39, 0.7) 0%, 
-        rgba(17, 24, 39, 0.6) 50%, 
-        rgba(0, 0, 0, 0.5) 100%);
+      background: linear-gradient(
+        180deg,
+        #041b2d 0%,
+        rgba(4, 27, 45, 0.7) 30%,
+        rgba(4, 27, 45, 0.2) 70%
+      );
     }
 
     .slide-content {
@@ -430,30 +446,29 @@ import empresaHero from '../assets/empresa-hero.jpg';
 
     .slide-content h1,
     .slide-content h2 {
-      font-size: 2.8rem;
+      font-size: 3.2rem;
     }
 
     .slide-content p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
 
     .carousel-btn {
       width: 45px;
       height: 45px;
-      font-size: 1.25rem;
+      font-size: 2rem;
     }
 
     .carousel-controls {
-      padding: 0 1rem;
+      padding: 0 0.5rem;
     }
 
     .indicator {
-      width: 10px;
-      height: 10px;
+      display: none;
     }
 
     .indicator.active {
-      width: 25px;
+      display: none;
     }
 
     .cta-button {
