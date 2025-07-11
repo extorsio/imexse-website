@@ -30,123 +30,78 @@
       <div class="coverage-map">
         <div class="map-container">
           <div class="peru-map">
-            <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+            <svg viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg" aria-label="Mapa de cobertura de IMEXSE en Perú">
               <defs>
-                <!-- Gradientes para diferentes regiones -->
+                <!-- Gradientes simplificados -->
                 <linearGradient id="coastGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#e0f2fe"/>
-                  <stop offset="100%" style="stop-color:#0369a1"/>
+                  <stop offset="0%" stop-color="#e0f2fe"/>
+                  <stop offset="100%" stop-color="#0369a1"/>
                 </linearGradient>
                 <linearGradient id="sierraGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#fef3c7"/>
-                  <stop offset="100%" style="stop-color:#f59e0b"/>
+                  <stop offset="0%" stop-color="#fef3c7"/>
+                  <stop offset="100%" stop-color="#f59e0b"/>
                 </linearGradient>
                 <linearGradient id="selvaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#dcfce7"/>
-                  <stop offset="100%" style="stop-color:#16a34a"/>
+                  <stop offset="0%" stop-color="#dcfce7"/>
+                  <stop offset="100%" stop-color="#16a34a"/>
                 </linearGradient>
                 
-                <!-- Sombras -->
+                <!-- Sombra simplificada -->
                 <filter id="regionShadow" x="-20%" y="-20%" width="140%" height="140%">
-                  <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+                  <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.15"/>
                 </filter>
-                
-                <!-- Patrón para océano -->
-                <pattern id="oceanPattern" patternUnits="userSpaceOnUse" width="4" height="4">
-                  <rect width="4" height="4" fill="#e0f2fe"/>
-                  <circle cx="2" cy="2" r="0.5" fill="#0891b2" opacity="0.3"/>
-                </pattern>
               </defs>
               
-              <!-- Fondo del océano -->
-              <rect x="0" y="0" width="150" height="600" fill="url(#oceanPattern)" opacity="0.3"/>
+              <!-- Fondo del océano simplificado -->
+              <rect x="0" y="0" width="150" height="600" fill="#e0f2fe" />
               
-              <!-- COSTA NORTE -->
-              <path d="M150 80 L200 70 L250 75 L280 85 L300 100 L280 130 L250 120 L200 115 L170 120 Z" 
-                    fill="url(#coastGradient)" stroke="#0891b2" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
-              
-              <!-- SIERRA NORTE -->
-              <path d="M200 115 L250 120 L280 130 L320 140 L340 160 L320 180 L280 170 L240 165 L200 160 Z" 
-                    fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
-              
-              <!-- SELVA NORTE -->
-              <path d="M320 140 L380 130 L420 150 L430 180 L410 200 L370 190 L340 185 L320 180 Z" 
-                    fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              <!-- Regiones agrupadas para reducir nodos -->
+              <g filter="url(#regionShadow)">
+                <!-- COSTA -->
+                <path d="M150 80 L200 70 L250 75 L280 85 L300 100 L280 130 L250 120 L200 115 L170 120 Z" fill="url(#coastGradient)" stroke="#0891b2" stroke-width="0.5"/>
+                <path d="M160 225 L200 235 L240 230 L250 250 L220 270 L180 265 L150 250 Z" fill="url(#coastGradient)" stroke="#0891b2" stroke-width="0.5"/>
+                <path d="M150 350 L200 345 L240 350 L250 380 L220 400 L180 395 L140 380 Z" fill="url(#coastGradient)" stroke="#0891b2" stroke-width="0.5"/>
+                
+                <!-- SIERRA -->
+                <path d="M200 115 L250 120 L280 130 L320 140 L340 160 L320 180 L280 170 L240 165 L200 160 Z" fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="0.5"/>
+                <path d="M240 230 L280 235 L320 245 L350 260 L340 290 L300 285 L260 280 L240 270 Z" fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="0.5"/>
+                <path d="M240 350 L290 355 L330 365 L360 380 L350 410 L310 405 L270 400 L240 390 Z" fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="0.5"/>
+                
+                <!-- SELVA -->
+                <path d="M320 140 L380 130 L420 150 L430 180 L410 200 L370 190 L340 185 L320 180 Z" fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="0.5"/>
+                <path d="M350 260 L400 250 L440 270 L450 300 L430 320 L390 315 L360 310 L340 290 Z" fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="0.5"/>
+                <path d="M360 380 L410 370 L450 390 L460 420 L440 440 L400 435 L370 430 L350 410 Z" fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="0.5"/>
+              </g>
               
               <!-- LIMA METROPOLITANA -->
-              <path d="M170 200 L220 195 L250 200 L240 230 L200 235 L160 225 Z" 
-                    fill="#fbbf24" stroke="#ea580c" stroke-width="2" filter="url(#regionShadow)"/>
+              <path d="M170 200 L220 195 L250 200 L240 230 L200 235 L160 225 Z" fill="#fbbf24" stroke="#ea580c" stroke-width="1.5" filter="url(#regionShadow)"/>
               
-              <!-- COSTA CENTRO -->
-              <path d="M160 225 L200 235 L240 230 L250 250 L220 270 L180 265 L150 250 Z" 
-                    fill="url(#coastGradient)" stroke="#0891b2" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              <!-- Rutas principales (sin animación por defecto para performance) -->
+              <g stroke="#ea580c" stroke-width="2.5" stroke-dasharray="6,4" opacity="0.6">
+                <path d="M210 215 L280 170" />
+                <path d="M210 215 L170 160" />
+                <path d="M210 215 L180 350" />
+                <path d="M210 215 L300 380" />
+                <path d="M210 215 L380 290" />
+              </g>
               
-              <!-- SIERRA CENTRO -->
-              <path d="M240 230 L280 235 L320 245 L350 260 L340 290 L300 285 L260 280 L240 270 Z" 
-                    fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
+              <!-- CIUDADES PRINCIPALES (agrupadas) -->
+              <g fill="#0369a1" stroke="#fff" stroke-width="1.5">
+                <circle cx="210" cy="215" r="10" fill="#ea580c" stroke-width="2.5"/>
+                <circle cx="280" cy="170" r="6"/>
+                <circle cx="170" cy="160" r="6"/>
+                <circle cx="180" cy="350" r="6"/>
+                <circle cx="300" cy="380" r="6"/>
+                <circle cx="190" cy="120" r="5" fill="#16a34a"/>
+                <circle cx="380" cy="290" r="5" fill="#16a34a"/>
+              </g>
               
-              <!-- SELVA CENTRO -->
-              <path d="M350 260 L400 250 L440 270 L450 300 L430 320 L390 315 L360 310 L340 290 Z" 
-                    fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
-              
-              <!-- COSTA SUR -->
-              <path d="M150 350 L200 345 L240 350 L250 380 L220 400 L180 395 L140 380 Z" 
-                    fill="url(#coastGradient)" stroke="#0891b2" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
-              
-              <!-- SIERRA SUR -->
-              <path d="M240 350 L290 355 L330 365 L360 380 L350 410 L310 405 L270 400 L240 390 Z" 
-                    fill="url(#sierraGradient)" stroke="#f59e0b" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
-              
-              <!-- SELVA SUR -->
-              <path d="M360 380 L410 370 L450 390 L460 420 L440 440 L400 435 L370 430 L350 410 Z" 
-                    fill="url(#selvaGradient)" stroke="#16a34a" stroke-width="1" filter="url(#regionShadow)" opacity="0.8"/>
-              
-              <!-- Rutas principales animadas -->
-              <path d="M210 215 L280 170" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
-              <path d="M210 215 L170 160" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
-              <path d="M210 215 L180 350" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
-              <path d="M210 215 L300 380" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
-              <path d="M210 215 L380 290" stroke="#ea580c" stroke-width="3" stroke-dasharray="8,4" opacity="0.7" class="route-animation"/>
-              
-              <!-- CIUDADES PRINCIPALES -->
-              
-              <!-- Lima (Capital) - Más grande y destacada -->
-              <circle cx="210" cy="215" r="12" fill="#ea580c" stroke="#fff" stroke-width="3"/>
-              <circle cx="210" cy="215" r="6" fill="#fff" opacity="0.8"/>
-              <text x="230" y="220" font-family="Inter" font-size="16" font-weight="700" fill="#1e293b">LIMA</text>
-              
-              <!-- Ciudades importantes -->
-              <circle cx="280" cy="170" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
-              <text x="295" y="175" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Huancayo</text>
-              
-              <circle cx="170" cy="160" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
-              <text x="110" y="155" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Trujillo</text>
-              
-              <circle cx="180" cy="350" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
-              <text x="120" y="345" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Arequipa</text>
-              
-              <circle cx="300" cy="380" r="7" fill="#0369a1" stroke="#fff" stroke-width="2"/>
-              <text x="315" y="385" font-family="Inter" font-size="12" font-weight="600" fill="#1e293b">Cusco</text>
-              
-              <circle cx="190" cy="120" r="6" fill="#16a34a" stroke="#fff" stroke-width="2"/>
-              <text x="130" y="115" font-family="Inter" font-size="11" font-weight="500" fill="#1e293b">Chiclayo</text>
-              
-              <circle cx="380" cy="290" r="6" fill="#16a34a" stroke="#fff" stroke-width="2"/>
-              <text x="395" y="295" font-family="Inter" font-size="11" font-weight="500" fill="#1e293b">Iquitos</text>
-              
-              <circle cx="320" cy="320" r="5" fill="#f59e0b" stroke="#fff" stroke-width="1"/>
-              <text x="335" y="325" font-family="Inter" font-size="10" font-weight="500" fill="#1e293b">Ayacucho</text>
-              
-              <!-- Elementos decorativos -->
-              <text x="50" y="50" font-family="Inter" font-size="24" font-weight="800" fill="#0369a1" opacity="0.3">PERÚ</text>
-              <text x="350" y="550" font-family="Inter" font-size="12" font-weight="500" fill="#64748b" opacity="0.6">Cobertura Nacional</text>
-              
-              <!-- Indicador de escala -->
-              <g transform="translate(380, 500)">
-                <line x1="0" y1="0" x2="50" y2="0" stroke="#64748b" stroke-width="2"/>
-                <line x1="0" y1="-3" x2="0" y2="3" stroke="#64748b" stroke-width="2"/>
-                <line x1="50" y1="-3" x2="50" y2="3" stroke="#64748b" stroke-width="2"/>
-                <text x="25" y="15" font-family="Inter" font-size="9" text-anchor="middle" fill="#64748b">500 km</text>
+              <!-- TEXTO (reducido y optimizado) -->
+              <g font-family="Inter, sans-serif" font-weight="600" fill="#1e293b" text-anchor="middle">
+                <text x="210" y="245" font-size="14">LIMA</text>
+                <text x="115" y="155" font-size="11">Trujillo</text>
+                <text x="125" y="345" font-size="11">Arequipa</text>
+                <text x="325" y="385" font-size="11">Cusco</text>
               </g>
             </svg>
           </div>

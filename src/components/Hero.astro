@@ -109,15 +109,20 @@ import empresaHero from '../assets/empresa-hero.jpg';
     slideInterval = setInterval(nextSlide, 5000) as unknown as number;
   }
 
+  // Add passive event listeners for better scroll performance
+  function addPassiveEventListeners() {
+    window.addEventListener('touchstart', () => {}, { passive: true });
+    window.addEventListener('touchmove', () => {}, { passive: true });
+    window.addEventListener('wheel', () => {}, { passive: true });
+  }
+
   // Auto-advance slides - inicializar después del DOM
   document.addEventListener('DOMContentLoaded', () => {
     initializeCarousel();
     showSlide(slideIndex);
     slideInterval = setInterval(nextSlide, 5000) as unknown as number;
     
-    // Agregar listeners pasivos para mejor scroll performance
-    document.addEventListener('touchstart', function() {}, { passive: true });
-    document.addEventListener('touchmove', function() {}, { passive: true });
+    addPassiveEventListeners();
   });
 
   // Make functions globally available
