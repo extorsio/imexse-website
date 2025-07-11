@@ -8,6 +8,8 @@ import cianuroR from '../assets/cianuro_r.png';
 import cajasUpscale from '../assets/cajas_upscale.png';
 import sodaCaustica from '../assets/soda-caustica.png';
 import productos from '../assets/productos.jpg';
+
+const paletizadosImages = import.meta.glob<{ default: ImageMetadata }>('../assets/cilindros paletizados/*.{JPG,jpg,jpeg,png,gif}', { eager: true });
 ---
 
 <Layout title="Productos - IMEXSE S.R.L.">
@@ -209,6 +211,22 @@ import productos from '../assets/productos.jpg';
               <h4>Escolta:</h4>
               <p>Tendrá una supervisión permanente durante todo el traslado y, será escoltado por vehículos provistos con el equipamiento de respuesta a incidentes primarios.</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+      <div class="container">
+        <h2>Galería de Cilindros Paletizados</h2>
+        <div class="carousel-wrapper">
+          <div class="carousel">
+            {Object.values(paletizadosImages).map(image => (
+              <div class="carousel-item">
+                <Image src={image.default} alt="Cilindro paletizado" width={600} height={400} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -522,7 +540,7 @@ import productos from '../assets/productos.jpg';
   /* Products Grid */
   .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-template-columns: 1fr;
     gap: 4rem;
     margin-bottom: 6rem;
   }
@@ -536,6 +554,8 @@ import productos from '../assets/productos.jpg';
     border: 1px solid rgba(59, 130, 246, 0.1);
     position: relative;
     animation: scaleIn 0.6s ease-out;
+    display: flex;
+    align-items: stretch;
   }
 
   .product-card::before {
@@ -561,9 +581,9 @@ import productos from '../assets/productos.jpg';
   }
 
   .product-image {
-    height: 350px;
     overflow: hidden;
     position: relative;
+    flex: 1.5;
   }
 
   .product-image img {
@@ -595,6 +615,10 @@ import productos from '../assets/productos.jpg';
     padding: 3rem;
     position: relative;
     z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .product-info h3 {
@@ -1010,6 +1034,103 @@ import productos from '../assets/productos.jpg';
     font-size: 0.8rem;
   }
 
+  /* Carousel Section */
+  .carousel-section {
+    padding: 6rem 0;
+    background: #ffffff;
+    animation: fadeInUp 0.8s ease-out;
+  }
+
+  .carousel-section h2 {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 4rem;
+    color: #1e40af;
+    background: linear-gradient(45deg, #1e40af, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+  }
+
+  .carousel-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(45deg, #ea580c, #f97316);
+    border-radius: 2px;
+  }
+
+  .carousel-wrapper {
+    position: relative;
+  }
+
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding-bottom: 2rem; /* For scrollbar */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  /* Hide scrollbar */
+  .carousel::-webkit-scrollbar {
+    height: 12px;
+  }
+  .carousel::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+  }
+  .carousel::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #3b82f6, #60a5fa);
+    border-radius: 10px;
+  }
+   .carousel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #1e40af, #3b82f6);
+  }
+
+
+  .carousel-item {
+    flex: 0 0 80%;
+    max-width: 80%;
+    scroll-snap-align: center;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+
+  .carousel-item:hover {
+    transform: scale(1.02);
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .carousel-item {
+      flex-basis: 60%;
+      max-width: 60%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .carousel-item {
+      flex-basis: 45%;
+      max-width: 45%;
+    }
+  }
+
   /* Origin Section */
   .origin-section {
     padding: 6rem 0;
@@ -1272,7 +1393,8 @@ import productos from '../assets/productos.jpg';
     .sales-section,
     .detailed-services,
     .origin-section,
-    .contact-section {
+    .contact-section,
+    .carousel-section {
       padding: 4rem 1rem;
     }
 
@@ -1280,7 +1402,8 @@ import productos from '../assets/productos.jpg';
     .services-section h2,
     .sales-section h2,
     .origin-section h2,
-    .contact-section h2 {
+    .contact-section h2,
+    .carousel-section h2 {
       font-size: 2.2rem;
     }
 
@@ -1294,7 +1417,7 @@ import productos from '../assets/productos.jpg';
     }
 
     .product-card {
-      margin: 0 1rem;
+      flex-direction: column;
     }
 
     .product-info {
@@ -1396,7 +1519,8 @@ import productos from '../assets/productos.jpg';
     .services-section h2,
     .sales-section h2,
     .origin-section h2,
-    .contact-section h2 {
+    .contact-section h2,
+    .carousel-section h2 {
       font-size: 1.8rem;
     }
 
@@ -1494,7 +1618,8 @@ import productos from '../assets/productos.jpg';
     .sales-section,
     .detailed-services,
     .origin-section,
-    .contact-section {
+    .contact-section,
+    .carousel-section {
       opacity: 0;
       transform: translateY(30px);
       animation: fadeInUp 0.8s ease-out forwards;
@@ -1504,7 +1629,69 @@ import productos from '../assets/productos.jpg';
     .services-section { animation-delay: 0.2s; }
     .sales-section { animation-delay: 0.3s; }
     .detailed-services { animation-delay: 0.4s; }
-    .origin-section { animation-delay: 0.5s; }
-    .contact-section { animation-delay: 0.6s; }
+    .carousel-section { animation-delay: 0.5s; }
+    .origin-section { animation-delay: 0.6s; }
+    .contact-section { animation-delay: 0.7s; }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.carousel');
+    if (!carousel) return;
+
+    let autoScrollInterval;
+    let userInteractionTimeout;
+
+    const scrollSpeed = 1; // Píxeles por fotograma
+    const intervalTime = 30; // Milisegundos entre fotogramas para controlar la velocidad
+    const resumeDelay = 5000; // 5 segundos de espera antes de reanudar
+
+    const startAutoScroll = () => {
+      // Limpiar cualquier intervalo existente para evitar duplicados
+      clearInterval(autoScrollInterval);
+      autoScrollInterval = setInterval(() => {
+        // Si el carrusel llega al final, vuelve al principio suavemente
+        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 1) {
+          carousel.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          // Desplaza el carrusel
+          carousel.scrollBy({ left: scrollSpeed, behavior: 'auto' });
+        }
+      }, intervalTime);
+    };
+
+    const stopAutoScroll = () => {
+      clearInterval(autoScrollInterval);
+    };
+
+    // Función para manejar la interacción del usuario
+    const handleUserInteraction = () => {
+      stopAutoScroll();
+      // Limpiar el temporizador de reanudación si el usuario interactúa de nuevo
+      clearTimeout(userInteractionTimeout);
+      // Establecer un temporizador para reanudar el desplazamiento automático
+      userInteractionTimeout = setTimeout(() => {
+        startAutoScroll();
+      }, resumeDelay);
+    };
+
+    // Iniciar el desplazamiento automático al cargar la página
+    startAutoScroll();
+
+    // Pausar cuando el ratón está sobre el carrusel para una mejor UX
+    carousel.addEventListener('mouseenter', stopAutoScroll);
+    carousel.addEventListener('mouseleave', handleUserInteraction);
+
+    // Detectar interacción directa del usuario
+    carousel.addEventListener('mousedown', handleUserInteraction);
+    carousel.addEventListener('touchstart', handleUserInteraction, { passive: true });
+    carousel.addEventListener('wheel', handleUserInteraction, { passive: true }); // Para el scroll con la rueda del ratón
+    
+    // Cuando el usuario usa la barra de scroll directamente
+    carousel.addEventListener('scroll', () => {
+        // Si el scroll es manual, se resetea el timer
+        handleUserInteraction();
+    }, { passive: true });
+  });
+</script>
